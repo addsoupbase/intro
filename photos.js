@@ -15,6 +15,34 @@ sharpedo.src = 'https://media.discordapp.net/attachments/1152315845784117339/124
 let kyogre = new Image()
 kyogre.frames = 10;
 kyogre.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241453236364513393/kyogrespritesheet.png?ex=664a40ec&is=6648ef6c&hm=f6a9142d9ef0fb9a4adae1317d0ca932ac88ff1c7960a390bf341cacf8b3338d&=&format=webp&quality=lossless&width=704&height=79'
+let manaphy = new Image()
+manaphy.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241756853608644718/manaphysprite.png?ex=664b5bb0&is=664a0a30&hm=b1acf3c184475599d12dbd0432540a929801382358db2a57d9432fc813382f34&=&format=webp&quality=lossless&width=352&height=52'
+manaphy.frames = 8
+let seadra = new Image()
+seadra.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241756425483718826/seadrasprite.png?ex=664b5b4a&is=664a09ca&hm=7ce86e7fde1668e9cc9c8c1115bcbde3b91e90fccfd28bfdb8d4309e482ac6a8&=&format=webp&quality=lossless&width=220&height=61'
+seadra.frames = 5
+let huntail = new Image()
+huntail.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241757232417345636/huntailsprite.png?ex=664b5c0a&is=664a0a8a&hm=f4234b1ac04d1c5b744d2d9bcadfb5185bf5b305c537189b608f604c52963a2e&=&format=webp&quality=lossless&width=176&height=61'
+huntail.frames = 4
+let carvanha = new Image()
+carvanha.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241757605135909044/carvanhasprite.png?ex=664b5c63&is=664a0ae3&hm=cb72610118b2f2659789b7b580ee5a0eb4b82b3d77575bd75d75368c6aff2690&=&format=webp&quality=lossless&width=140&height=52'
+carvanha.frames = 4
+let lanturn = new Image()
+lanturn.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241764651037888593/lanturnsprite.png?ex=664b62f3&is=664a1173&hm=9b8406433c28246a4ffe0637c0fd03599cd091311d6fc078b829190f8a7e84e6&=&format=webp&quality=lossless&width=140&height=52'
+lanturn.frames = 4
+let lanturnShiny = new Image()
+lanturnShiny.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241764651583406130/lanturnshinysprite.png?ex=664b62f3&is=664a1173&hm=bd98af2f6a21dc33a074adac7bedbdee5a7830c5166fc6bb091027db866284cd&=&format=webp&quality=lossless&width=140&height=52'
+lanturnShiny.frames = lanturn.frames;
+let corsola = new Image()
+corsola.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241764651335811113/corsolasprite.png?ex=664b62f3&is=664a1173&hm=d60ac7865c2bb29a0985786062cb198a9212ba1a50ef43e547a99e81603411cb&=&format=webp&quality=lossless&width=105&height=35'
+corsola.frames = 4
+let wailord = new Image()
+wailord.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241771562798026773/wailordsprite.png?ex=664b6963&is=664a17e3&hm=c2ac2d655aa609e02cd39d1e36ff083455ef67a60ebe12dc9f9ed8b817ea9568&=&format=webp&quality=lossless&width=950&height=114'
+wailord.frames = 12
+
+
+
+
 let MIS = new Image()
 MIS.src = 'https://cdn.discordapp.com/attachments/1200323297745834066/1200753060314632232/misdreavus-export.png?ex=6649d7ee&is=6648866e&hm=9adca5a7d90a21cf19236e24f9df2123e1ab581dd6d671d8827849e1717c3986&'
 let art1 = new Image()
