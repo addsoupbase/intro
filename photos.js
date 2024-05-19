@@ -44,7 +44,7 @@ wailord.frames = 12
 
 
 let MIS = new Image()
-MIS.src = 'https://cdn.discordapp.com/attachments/1200323297745834066/1200753060314632232/misdreavus-export.png?ex=6649d7ee&is=6648866e&hm=9adca5a7d90a21cf19236e24f9df2123e1ab581dd6d671d8827849e1717c3986&'
+MIS.src = "https://media.discordapp.net/attachments/1200323297745834066/1200753060314632232/misdreavus-export.png?ex=664b296e&is=6649d7ee&hm=1ecb456fea128934d7cbc83b2324c7d6b4fa520a5280326dd7396d607fd736e1&"
 let art1 = new Image()
 art1.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241478402616197291/lurantis.png?ex=664a585c&is=664906dc&hm=a60fb407afdabe8d1b1302b99f7956e06abfa99a1aecae61292bd8b541d8bcec&=&format=webp&quality=lossless&width=300&height=190'
 let art2 = new Image()
