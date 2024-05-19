@@ -7,7 +7,7 @@ gorebyss.src = 'https://media.discordapp.net/attachments/1152315845784117339/124
 gorebyss.preload = true
 gorebyss.frames = 9
 let phione = new Image();
-phione.src = 'https://cdn.discordapp.com/attachments/1152315845784117339/1241449599802150912/phionesprite.png?ex=664a3d89&is=6648ec09&hm=517553152cefb6a680b2a9620b97622a4fc9fb052c0be9ab880ebf3e334fcfc6&'
+phione.src = "https://media.discordapp.net/attachments/1152315845784117339/1241449599802150912/phionesprite.png?ex=664ae649&is=664994c9&hm=324ff13667be10ac0047c45cb30799461a7573c697be2bd15dad588a9d3c5660&"
 phione.frames = 10
 let sharpedo = new Image()
 sharpedo.frames = 8;
