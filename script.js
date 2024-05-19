@@ -112,14 +112,14 @@ function loadPage(page) {
             }
             let iiii = document.createElement('a')
             iiii.href = 'https://addsoupbase.github.io/twehg'
-            iiii.innerHTML = 'World\'s even harderst game'
+            iiii.innerHTML = 'World\'s even harderest game'
             holder.appendChild(iiii)
 
             {
                 let texx2 = document.createElement('p')
                 texx2.className = 'subtext'
                 texx2.style.fontSize = '15px'
-                texx2.innerHTML = 'A remake of the old flash game "The world\'s hardest game". It\'s not done and only has a few levels but its kewl i geuss!! (music by i_likebugs2)'
+                texx2.innerHTML = 'A remake of the old flash game "The world\'s hardest game". It\'s not done and only has a few levels but its kewl i guess!! (music by i_likebugs2)'
                 holder.appendChild(texx2)
             }
             {
