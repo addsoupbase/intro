@@ -41,7 +41,29 @@ function loadPage(page) {
             texx.className = 'subtext'
             texx.style.fontSize = '15px'
             texx.innerHTML = 'there are SO MANY PEOPLE but thank you all <3 i will put everyone on here eventually so please be patient as it takes a lot of work'
+
             holder.appendChild(texx)
+            for (let i = 0; i < 5; i++) {
+                let asda = document.createElement('img')
+                switch (i) {
+                    case 0:
+                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777101309349958/uhhuh.gif?ex=664b6e8c&is=664a1d0c&hm=842fcff784fcc3d0207603957a30a3f04b51073c857eadeb391046b87a9f7296&=&width=35&height=35'
+                        break;
+                    case 1:
+                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777101678444554/hypip.gif?ex=664b6e8c&is=664a1d0c&hm=796115d0e87f5f5e847e9bf75a4602724f07c6f39ad604f58170b3b22c39a8b5&=&width=35&height=52'
+                        break;
+                    case 4:
+                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777102018052257/hyper.gif?ex=664b6e8c&is=664a1d0c&hm=36829ea68cb76e8b50cfcebdaefe8a0180750f6b404ee291ecdb97a47f854619&=&width=26&height=44'
+                        break;
+                    case 3:
+                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777102408384612/kirlia.gif?ex=664b6e8c&is=664a1d0c&hm=63cd81444ce8316aa616ef68902d9838ac44772115f73099ac8d7148e184a757&=&width=35&height=44'
+                        break;
+                    case 2:
+                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241776174737260776/misdreavushop.gif?ex=664b6daf&is=664a1c2f&hm=d25a679f497400019f6d3969471d76f1e84f025f282c04ca79940e9aeaf8fde8&=&width=26&height=96'
+                        break;
+                }
+                holder.appendChild(asda)
+            }
 
         }
             break;
@@ -143,7 +165,7 @@ function loadPage(page) {
 
 }
 function darkenPage() {
-    canvas.style.backgroundColor = `rgb(${14 - (window.scrollY / 100)}, ${132 - (window.scrollY / 100)}, ${228 - (window.scrollY / 100)})`
+    canvas.style.backgroundColor = `rgb(${14 - (window.scrollY / 80)}, ${132 - (window.scrollY / 80)}, ${228 - (window.scrollY / 80)})`
 }
 let sources = [art1, art2, art3, art4, art5, art6], cu = 0;
 let addLetters = function* () {
@@ -252,9 +274,9 @@ function Update() {
         f.x = Math.floor(Math.random() * canvas.width)
         f.size = Math.choose(6, 8);
     }
-    if (!(frame % 200)) {
+    if (!(frame % 100)) {
         let nn = new Shape('poke')
-        nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre);
+        nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
         nn.velocity *= 0.7
     }
 
@@ -372,15 +394,16 @@ class Shape {
         this.scaleX = 1
         this.t = Math.choose(1, 2)
         if (this.velocity > 0) {
-            this.x = 0 - this.size
+            this.x = 0 - this.size - 300
         }
         else {
-            this.x = canvas.width + this.size
+            this.x = canvas.width + this.size + 300
         }
         this.y = Math.floor(Math.random() * canvas.height - 50) + 50
         Shape._.push(this)
     }
     draw() {
+
         if (this.velocity < 0) {
             this.scaleX = -1
         }
@@ -392,7 +415,7 @@ class Shape {
                 this.kill()
             }
         }
-        if (this.x + this.size < -100 || this.x - this.size > canvas.width + 100 || this.y < -this.size) {
+        if (this.x + this.size < -300 || this.x - this.size > canvas.width + 300 || this.y < -this.size) {
             this.kill()
         }
         this.x += this.velocity
@@ -508,8 +531,34 @@ class Shape {
                 ctx.restore()
             }
                 break;
+            case 'sparkle': {
+                this.opacity -= 0.02
+                this.velocity = 0
+                if (this.opacity < 0) {
+                    this.kill()
+                    this.opacity = 0
+                }
+                ctx.save()
+                ctx.globalAlpha = this.opacity
+                ctx.translate(this.x, this.y)
+                ctx.beginPath()
+                ctx.moveTo(this.size, 0)
+                ctx.lineTo(-this.size, 0)
+                ctx.moveTo(0, this.size)
+                ctx.lineTo(0, -this.size)
+                ctx.strokeStyle = 'yellow'
+                ctx.stroke()
+                ctx.restore()
+            }
+                break;
             case 'poke':
+
                 this.unpoppable = true
+                ctx.globalAlpha = 1
+                ctx.save()
+                ctx.translate(this.x, this.y)
+                ctx.scale(this.scaleX, 1)
+
                 this.velocityY = 0
                 let crop = {
                     x: 0,
@@ -527,11 +576,46 @@ class Shape {
                     case sharpedo:
                         crop.x = 50;
                         crop.y = 75;
+                        this.velocity = 2 * Math.sign(this.velocity)
+
                         break;
                     case kyogre:
-                        crop.x = 100;
-                        crop.y = 100;
+                        crop.x = 130;
+                        crop.y = 130;
                         break
+                    case wailord:
+                        crop.x = 285;
+                        crop.y = 320
+                        this.velocity = 0.5 * Math.sign(this.velocity)
+                        break;
+                    case lanturnShiny:
+                        if (!(frame % 10)) {
+                            let shine = new Shape('sparkle')
+                            shine.size = 4 + Math.random() * 2
+                            shine.x = this.x + Math.random() * 30 * Math.choose(1, -1)
+                            shine.opacity = 1
+                            shine.y = this.y + Math.random() * 30 * Math.choose(1, -1)
+                        }
+                    case lanturn:
+                        crop.x = 50;
+                        crop.y = 70
+                        break;
+                    case corsola:
+                        crop.x = 25;
+                        crop.y = 30;
+                        break;
+                    case seadra:
+                        crop.x = 55
+                        crop.y = 60
+                        break;
+                    case carvanha:
+                        crop.x = 40;
+                        crop.y = 50
+                        break;
+                    case manaphy:
+                        crop.x = 65;
+                        crop.y = 60
+                        break;
                     default:
                         crop.y = 75;
                         crop.x = 75;
@@ -541,10 +625,7 @@ class Shape {
                     if (this.frame > this.img.frames - 1) {
                         this.frame = 0
                     }
-                    ctx.save()
 
-                    ctx.translate(this.x, this.y)
-                    ctx.scale(this.scaleX, 1)
 
                     ctx.drawImage(this.img, (this.img.width / this.img.frames) * this.frame, 0, this.img.width / this.img.frames, this.img.height, 0, 0, crop.x || 100, crop.y || 100)
                     ctx.restore()
@@ -559,7 +640,9 @@ class Shape {
         }
         this.invuln = true;
         Shape.toKill.push(this)
+
     }
+
 
 }
 Update()
@@ -582,7 +665,6 @@ window.addEventListener('mousedown', (c) => {
                 n.unpoppable = true
                 n.x = o.x;
                 n.y = o.y
-
                 n.img = o.img
                 o.img = null
             }
