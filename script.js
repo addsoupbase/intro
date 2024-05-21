@@ -1,13 +1,15 @@
 'use strict';
 console.log("%cHII", "color:teal;font-size:30px");
 let radius = 1;
-const canvas = document.getElementById('canvas'),
-    username = document.getElementById('user'),
+const canvas = $('#canvas')[0],
+    username = $('#user')[0],
     ctx = canvas.getContext('2d'),
-    pfp = document.getElementById('pfp');
+    pfp = $('#pfp')[0];
 let frame = 0;
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
-const preset = document.getElementById('preset')
+const preset = $('#preset')[0]
+$('.contain').css({left: '-300px',opacity:0})
+.animate({left:0,opacity:1},'slow')
 function loadPage(page) {
     switch (page) {
         case 'about': {
@@ -28,7 +30,6 @@ function loadPage(page) {
             texx.style.fontSize = '15px'
             texx.innerHTML = 'HII i really like misdreavus and the colour teal. IM REALLY HYPER AND SILLY SOMETIMES So if i just like type random stuff in chat that makes no sense just ignore it!! i try to be nice to everyone when i can and try not to argue with people. i like doing software development like this website, i made it myself and worked really hard on it so i hope you like it! i know theres not much yet though'
             holder.appendChild(texx)
-
         }
             break;
         case 'love': {
@@ -93,7 +94,7 @@ function loadPage(page) {
                     if (cu > sources.length - 1) {
                         cu = 0
                     }
-                    let IMG = document.getElementById('imagee')
+                    let IMG = $('#imagee')
                     IMG.src = sources[cu].src
 
                 } : function () {
@@ -101,7 +102,7 @@ function loadPage(page) {
                     if (cu < 0) {
                         cu = sources.length - 1
                     }
-                    let IMG = document.getElementById('imagee')
+                    let IMG = $('#imagee')
                     IMG.src = sources[cu].src
 
 
@@ -162,6 +163,7 @@ function loadPage(page) {
         }
             break;
     }
+$('#preset').children().hide().fadeIn()
 
 }
 function darkenPage() {
@@ -169,21 +171,16 @@ function darkenPage() {
 }
 let sources = [art1, art2, art3, art4, art5, art6], cu = 0;
 let addLetters = function* () {
-    yield username.innerHTML = 'a'
-    yield username.innerHTML += 'd'
-    yield username.innerHTML += 'd'
-    yield username.innerHTML += 's'
-    yield username.innerHTML += 'o'
-    yield username.innerHTML += 'u'
-    yield username.innerHTML += 'p'
-    yield username.innerHTML += 'b'
-    yield username.innerHTML += 'a'
-    yield username.innerHTML += 's'
-    yield username.innerHTML += 'e'
+    yield username.innerHTML  = 'a'
+    for (let i of 'ddsoupbase') {
+          yield username.innerHTML+=i
+
+    }  
+
     for (let i = 0; i < 2; i++) {
         yield
     }
-    username.innerHTML = '>' + username.innerHTML
+    username.innerHTML = '→' + username.innerHTML
 
     yield username.style.fontFamily = 'OCR A Std, monospace'
     for (let i = 0; i < 2; i++) {
@@ -274,11 +271,11 @@ function Update() {
         f.x = Math.floor(Math.random() * canvas.width)
         f.size = Math.choose(6, 8);
     }
-    if (!(frame % 100)) {
+   /* if (!(frame % 100)) {
         let nn = new Shape('poke')
         nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
         nn.velocity *= 0.7
-    }
+    }*/
 
 }
 function cycleColour() {
@@ -653,12 +650,12 @@ mousepos.y = o.y
 
 })
 */
-window.addEventListener('mousedown', (c) => {
+$(document).click(function(c) {
     for (let o of Shape._) {
         if (o.unpoppable) {
             continue
         }
-        if (Math.abs(o.x - c.x) < o.size && Math.abs(o.y - c.y) < o.size && !o.popped) {
+        if (Math.abs(o.x - c.clientX) < o.size && Math.abs(o.y - c.clientY) < o.size && !o.popped) {
             o.popped = true
             if (o.img) {
                 let n = new Shape('image')
