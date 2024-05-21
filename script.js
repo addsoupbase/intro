@@ -48,20 +48,20 @@ function loadPage(page) {
                 let asda = document.createElement('img')
                 switch (i) {
                     case 0:
-                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777101309349958/uhhuh.gif?ex=664b6e8c&is=664a1d0c&hm=842fcff784fcc3d0207603957a30a3f04b51073c857eadeb391046b87a9f7296&=&width=35&height=35'
+                        asda.src = 'uhhuh.gif'
                         break;
                     case 1:
-                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777101678444554/hypip.gif?ex=664b6e8c&is=664a1d0c&hm=796115d0e87f5f5e847e9bf75a4602724f07c6f39ad604f58170b3b22c39a8b5&=&width=35&height=52'
-                        break;
+                        asda.src = 'hypip.gif'
+                            break;
                     case 4:
-                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777102018052257/hyper.gif?ex=664b6e8c&is=664a1d0c&hm=36829ea68cb76e8b50cfcebdaefe8a0180750f6b404ee291ecdb97a47f854619&=&width=26&height=44'
-                        break;
+                        asda.src ='hyper.gif'
+                            break;
                     case 3:
-                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241777102408384612/kirlia.gif?ex=664b6e8c&is=664a1d0c&hm=63cd81444ce8316aa616ef68902d9838ac44772115f73099ac8d7148e184a757&=&width=35&height=44'
-                        break;
+                        asda.src = 'kirlia.gif'
+                            break;
                     case 2:
-                        asda.src = 'https://media.discordapp.net/attachments/1152315845784117339/1241776174737260776/misdreavushop.gif?ex=664b6daf&is=664a1c2f&hm=d25a679f497400019f6d3969471d76f1e84f025f282c04ca79940e9aeaf8fde8&=&width=26&height=96'
-                        break;
+                        asda.src = 'misdreavushop.gif'
+                            break;
                 }
                 holder.appendChild(asda)
             }
