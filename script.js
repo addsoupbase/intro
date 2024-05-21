@@ -94,7 +94,7 @@ function loadPage(page) {
                     if (cu > sources.length - 1) {
                         cu = 0
                     }
-                    let IMG = $('#imagee')
+                    let IMG = $('#imagee')[0]
                     IMG.src = sources[cu].src
 
                 } : function () {
@@ -102,7 +102,7 @@ function loadPage(page) {
                     if (cu < 0) {
                         cu = sources.length - 1
                     }
-                    let IMG = $('#imagee')
+                    let IMG = $('#imagee')[0]
                     IMG.src = sources[cu].src
 
 
