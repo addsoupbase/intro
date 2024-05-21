@@ -37,7 +37,7 @@ let corsola = new Image()
 corsola.src = 'corsolasprite.png'
 corsola.frames = 4
 let wailord = new Image()
-wailord.src = 'wailordsprite.png4'
+wailord.src = 'wailordsprite.png'
 wailord.frames = 12
 
 
