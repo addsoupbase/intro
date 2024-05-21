@@ -271,11 +271,11 @@ function Update() {
         f.x = Math.floor(Math.random() * canvas.width)
         f.size = Math.choose(6, 8);
     }
-   /* if (!(frame % 100)) {
+    if (!(frame % 100)) {
         let nn = new Shape('poke')
         nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
         nn.velocity *= 0.7
-    }*/
+    }
 
 }
 function cycleColour() {
