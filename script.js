@@ -211,6 +211,8 @@ let time = setInterval(() => {
         username.innerHTML = '&nbsp;'
     }
 }, 300)
+ctx.imageSmoothingQuality='high'
+
 function Update() {
     frame = requestAnimationFrame(Update)
     canvas.height = window.innerHeight
