@@ -211,13 +211,13 @@ let time = setInterval(() => {
         username.innerHTML = '&nbsp;'
     }
 }, 300)
-ctx.imageSmoothingQuality='high'
 
 function Update() {
     frame = requestAnimationFrame(Update)
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.imageSmoothingQuality='high'
     cycleColour()
     pfp.style.borderColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`
     /* radius *= 1.1;
