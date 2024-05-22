@@ -278,7 +278,8 @@ function Update() {
         nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
         nn.velocity *= 0.7
     }
-
+    ctx.fillStyle = 'rgb(14, 132, 228,0.2)'
+ctx.fillRect(0,0,canvas.width,canvas.height)
 }
 function cycleColour() {
     if (rgb.r === 255 && rgb.g !== 255 && rgb.b === 0) {
