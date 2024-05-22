@@ -7,7 +7,7 @@ gorebyss.src = 'img/gorebyssspritesheet.png'
 gorebyss.preload = true
 gorebyss.frames = 9
 let phione = new Image();
-phione.src = "phionesprite.png"
+phione.src = "img/phionesprite.png"
 phione.frames = 10
 let sharpedo = new Image()
 sharpedo.frames = 8;
@@ -44,7 +44,7 @@ wailord.frames = 12
 
 
 let MIS = new Image()
-MIS.src = "misdreavus-export.png"
+MIS.src = "img/misdreavus-export.png"
 let art1 = new Image()
 art1.src = 'img/lurantis.png'
 let art2 = new Image()
