@@ -48,19 +48,19 @@ function loadPage(page) {
                 let asda = document.createElement('img')
                 switch (i) {
                     case 0:
-                        asda.src = 'uhhuh.gif'
+                        asda.src = 'img/uhhuh.gif'
                         break;
                     case 1:
-                        asda.src = 'hypip.gif'
+                        asda.src = 'img/hypip.gif'
                             break;
                     case 4:
-                        asda.src ='hyper.gif'
+                        asda.src ='img/hyper.gif'
                             break;
                     case 3:
-                        asda.src = 'kirlia.gif'
+                        asda.src = 'img/kirlia.gif'
                             break;
                     case 2:
-                        asda.src = 'misdreavushop.gif'
+                        asda.src = 'img/misdreavushop.gif'
                             break;
                 }
                 holder.appendChild(asda)
