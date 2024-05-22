@@ -278,7 +278,7 @@ function Update() {
         nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
         nn.velocity *= 0.7
     }
-    ctx.fillStyle = 'rgb(14, 132, 228,0.5)'
+    ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
 ctx.fillRect(0,0,canvas.width,canvas.height)
 }
 function cycleColour() {
