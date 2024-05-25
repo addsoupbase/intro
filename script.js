@@ -4,12 +4,24 @@ let radius = 1;
 const canvas = $('#canvas')[0],
     username = $('#user')[0],
     ctx = canvas.getContext('2d'),
+    date = new Date(),
+    day = new Audio(),
+    night = new Audio(),
     pfp = $('#pfp')[0];
-let frame = 0;
+day.src = 'day.mp3'
+night.src = 'night.mp3'
+day.preload = true
+night.preload = true
+day.loop = night.loop = true;
+day.volume = night.volume = 0.5;
+
+let frame = 0,
+    playing = false;
+
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
 const preset = $('#preset')[0]
-$('.contain').css({left: '-300px',opacity:0})
-.animate({left:0,opacity:1},'slow')
+$('.contain').css({ left: '-300px', opacity: 0 })
+    .animate({ left: 0, opacity: 1 }, 'slow')
 function loadPage(page) {
     switch (page) {
         case 'about': {
@@ -20,6 +32,9 @@ function loadPage(page) {
             let ms = document.createElement('img')
             ms.src = MIS.src
             ms.width = 150
+            let nxx = document.createElement('p')
+            $(nxx).html('YOUR STEREOTYPICAL DUMB AMERICAN')
+            holder.appendChild(nxx)
             ms.title = "Misdreavus, Drawn by Indie"
             ms.className = 'contain2'
             holder.appendChild(document.createElement('p'))
@@ -52,16 +67,16 @@ function loadPage(page) {
                         break;
                     case 1:
                         asda.src = 'img/hypip.gif'
-                            break;
+                        break;
                     case 4:
-                        asda.src ='img/hyper.gif'
-                            break;
+                        asda.src = 'img/hyper.gif'
+                        break;
                     case 3:
                         asda.src = 'img/kirlia.gif'
-                            break;
+                        break;
                     case 2:
                         asda.src = 'img/misdreavushop.gif'
-                            break;
+                        break;
                 }
                 holder.appendChild(asda)
             }
@@ -163,7 +178,7 @@ function loadPage(page) {
         }
             break;
     }
-$('#preset').children().hide().fadeIn()
+    $('#preset').children().hide().fadeIn()
 
 }
 function darkenPage() {
@@ -171,11 +186,11 @@ function darkenPage() {
 }
 let sources = [art1, art2, art3, art4, art5, art6], cu = 0;
 let addLetters = function* () {
-    yield username.innerHTML  = 'a'
+    yield username.innerHTML = 'a'
     for (let i of 'ddsoupbase') {
-          yield username.innerHTML+=i
+        yield username.innerHTML += i
 
-    }  
+    }
 
     for (let i = 0; i < 2; i++) {
         yield
@@ -217,7 +232,7 @@ function Update() {
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.imageSmoothingQuality='high'
+    ctx.imageSmoothingQuality = 'high'
     cycleColour()
     pfp.style.borderColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`
     /* radius *= 1.1;
@@ -279,7 +294,7 @@ function Update() {
         nn.velocity *= 0.7
     }
     ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
-ctx.fillRect(0,0,canvas.width,canvas.height)
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
 function cycleColour() {
     if (rgb.r === 255 && rgb.g !== 255 && rgb.b === 0) {
@@ -652,12 +667,24 @@ mousepos.x = o.x
 mousepos.y = o.y
 
 })
-*/
-$(document).click(function(c) {
+*/$('*').focus(function () {
+    if (!playing) {
+        playing = true;
+        if (date.getHours() > 20) {
+            setTimeout(o => night.play(), 4000)
+        }
+        else {
+            setTimeout(o => day.play(), 4000)
+
+        }
+    }
+})
+$(document).click(function (c) {
     for (let o of Shape._) {
         if (o.unpoppable) {
             continue
         }
+
         if (Math.abs(o.x - c.clientX) < o.size && Math.abs(o.y - c.clientY) < o.size && !o.popped) {
             o.popped = true
             if (o.img) {
