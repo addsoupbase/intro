@@ -1,7 +1,35 @@
 'use strict';
-/*let rainmint = new Image()
-rainmint.src = 'img/https://media.discordapp.net/attachments/1152315845784117339/1241423603216678992/rainmint.png?ex=664a2553&is=6648d3d3&hm=9b177d1159b01970ccee04d971f2b471a7f85884e50987d3f4c9204527975e03&=&format=webp&quality=lossless&width=281&height=281'
-rainmint.preload = true;*/
+class Avatar extends Image {
+    static all = []
+    constructor(src, text) {
+        super()
+        this.src = 'img/avatars/' + src + '.png'
+        this.preload = true;
+        this.text = text ?? src.charAt(0).toUpperCase() + src.slice(1)
+        Avatar.all.push(this)
+    }
+}
+let aya = new Avatar('aya', 'Aya'),
+    ghostie = new Avatar('ghostie', ),
+    retro = new Avatar('retro', ),
+    cunder = new Avatar('cunder', ),
+    lorex = new Avatar('lorex', ),
+    fourche = new Avatar('fourche', ),
+    rogue = new Avatar('rogue', ),
+    indie = new Avatar('indie',),
+    apollo = new Avatar('apollo',),
+    casey = new Avatar('casey',),
+    chlo = new Avatar('chlo',),
+    crazy = new Avatar('crazy',),
+    drifter = new Avatar('drifter'),
+    gilly = new Avatar('gilly'),
+    bugs = new Avatar('ilikebugs2','i_likebugs2'),
+    lunza = new Avatar('lunza'),
+    may = new Avatar('may'),
+    mmaddie = new Avatar('mothmaddie'),
+    neboola = new Avatar('neboola'),
+    znx = new Avatar('znsxxe')
+
 let gorebyss = new Image();
 gorebyss.src = 'img/gorebyssspritesheet.png'
 gorebyss.preload = true
