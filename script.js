@@ -672,7 +672,7 @@ mousepos.y = o.y
 */$('*').focus(function () {
     if (!playing) {
         playing = true;
-        if (date.getHours() > 20) {
+        if (date.getHours() > 20 || date.getHours() < 6) {
             setTimeout(o => night.play(), 4000)
         }
         else {
