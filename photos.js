@@ -42,7 +42,8 @@ let aya = new Avatar('aya', 'Aya'),
     vio = new Avatar('vio'),
     khaotic = new Avatar("khaotic","khaotic good"),
     kae = new Avatar("kae"),
-    roman = new Avatar("rohan")
+    rohan = new Avatar("rohan"),
+    bbg = new Avatar("bbg","bbg.avarice")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
 phione = new Sprite('phionesprite', 10),
