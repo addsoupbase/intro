@@ -562,8 +562,15 @@ class Shape {
                 ctx.beginPath()
                 ctx.save()
                 ctx.translate(this.x, this.y)
-                if (this.img) ctx.drawImage(this.img, (-this.size / 2) - 2, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2)
 
+                if (this.img) { 
+                    ctx.save()
+                    ctx.arc(0, 0, this.size / 1.7, 0, Math.PI * 2)
+                    ctx.clip()
+                    ctx.drawImage(this.img, (-this.size / 2) - 2, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
+                ctx.restore()
+                }
+                ctx.beginPath()
                 ctx.arc(0, 0, this.size, 0, Math.PI * 2)
                 ctx.strokeStyle = 'rgb(14, 67, 228)'
                 ctx.stroke()
@@ -621,14 +628,14 @@ class Shape {
                 ctx.font = '20px Lexend'
                 ctx.textAlign = 'center'
                 ctx.save()
-
+                ctx.beginPath()
                 ctx.translate(this.x, this.y)
 
 
                 ctx.fillText(this.img.text, 0, this.size * 1.5)
 
-
-
+                ctx.arc(0, 0, this.size / 1.7, 0, Math.PI * 2)
+                ctx.clip()
                 ctx.drawImage(this.img,
                     (-this.size / 2) - 2,
                     (-this.size / 2) - 2,
