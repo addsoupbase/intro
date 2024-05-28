@@ -9,13 +9,23 @@ class Avatar extends Image {
         Avatar.all.push(this)
     }
 }
+class Sprite extends Image {
+    static all = []
+    constructor(src, frames) {
+        super()
+        this.src = 'img/' + src + '.png';
+        this.frames = frames;
+        this.preload = true;
+        Sprite.all.push(this)
+    }
+}
 let aya = new Avatar('aya', 'Aya'),
-    ghostie = new Avatar('ghostie', ),
-    retro = new Avatar('retro', ),
-    cunder = new Avatar('cunder', ),
-    lorex = new Avatar('lorex', ),
-    fourche = new Avatar('fourche', ),
-    rogue = new Avatar('rogue', ),
+    ghostie = new Avatar('ghostie',),
+    retro = new Avatar('retro',),
+    cunder = new Avatar('cunder',),
+    lorex = new Avatar('lorex',),
+    fourche = new Avatar('fourche',),
+    rogue = new Avatar('rogue',),
     indie = new Avatar('indie',),
     apollo = new Avatar('apollo',),
     casey = new Avatar('casey',),
@@ -23,50 +33,26 @@ let aya = new Avatar('aya', 'Aya'),
     crazy = new Avatar('crazy',),
     drifter = new Avatar('drifter'),
     gilly = new Avatar('gilly'),
-    bugs = new Avatar('ilikebugs2','i_likebugs2'),
+    bugs = new Avatar('ilikebugs2', 'i_likebugs2'),
     lunza = new Avatar('lunza'),
     may = new Avatar('may'),
     mmaddie = new Avatar('mothmaddie'),
     neboola = new Avatar('neboola'),
     znx = new Avatar('znsxxe')
 
-let gorebyss = new Image();
-gorebyss.src = 'img/gorebyssspritesheet.png'
-gorebyss.preload = true
-gorebyss.frames = 9
-let phione = new Image();
-phione.src = "img/phionesprite.png"
-phione.frames = 10
-let sharpedo = new Image()
-sharpedo.frames = 8;
-sharpedo.src = 'img/sharpedospritesheet.png'
-let kyogre = new Image()
-kyogre.frames = 10;
-kyogre.src = 'img/kyogrespritesheet.png'
-let manaphy = new Image()
-manaphy.src = 'img/manaphysprite.png'
-manaphy.frames = 8
-let seadra = new Image()
-seadra.src = 'img/seadrasprite.png'
-seadra.frames = 5
-let huntail = new Image()
-huntail.src = 'img/huntailsprite.png'
-huntail.frames = 4
-let carvanha = new Image()
-carvanha.src = 'img/carvanhasprite.png'
-carvanha.frames = 4
-let lanturn = new Image()
-lanturn.src = 'img/lanturnsprite.png'
-lanturn.frames = 4
-let lanturnShiny = new Image()
-lanturnShiny.src = 'img/lanturnshinysprite.png'
-lanturnShiny.frames = lanturn.frames;
-let corsola = new Image()
-corsola.src = 'img/corsolasprite.png'
-corsola.frames = 4
-let wailord = new Image()
-wailord.src = 'img/wailordsprite.png'
-wailord.frames = 12
+let gorebyss = new Sprite('gorebyssspritesheet', 9),
+phione = new Sprite('phionesprite', 10),
+    sharpedo = new Sprite('sharpedospritesheet', 8),
+    kyogre = new Sprite('kyogrespritesheet', 10),
+    manaphy = new Sprite('manaphysprite', 8),
+    seadra = new Sprite('seadrasprite', 5),
+    huntail = new Sprite('huntailsprite', 4),
+    carvanha = new Sprite('carvanhasprite', 4),
+    lanturn = new Sprite('lanturnsprite', 4),
+   // lanturnShiny = new Sprite('lanturnshinysprite', 4),
+    corsola = new Sprite('corsolasprite', 4),
+    wailord = new Sprite('wailordsprite', 12)
+
 
 
 
