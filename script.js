@@ -565,7 +565,7 @@ class Shape {
 
                 if (this.img) { 
                     ctx.save()
-                    ctx.arc(0, 0, this.size / 1.45, 0, Math.PI * 2)
+                    ctx.arc(0, 0, this.size / 1.5, 0, Math.PI * 2)
                     ctx.clip()
                     ctx.drawImage(this.img, (-this.size / 2) - 2, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
                 ctx.restore()
@@ -634,7 +634,7 @@ class Shape {
 
                 ctx.fillText(this.img.text, 0, this.size * 1.5)
 
-                ctx.arc(0, 0, this.size / 1.45, 0, Math.PI * 2)
+                ctx.arc(0, 0, this.size / 1.5, 0, Math.PI * 2)
                 ctx.clip()
                 ctx.drawImage(this.img,
                     (-this.size / 2) - 2,
