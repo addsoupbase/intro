@@ -6,7 +6,7 @@ class Avatar extends Image {
         this.src = 'img/avatars/' + src + '.png'
         this.preload = true;
         this.text = text ?? src.charAt(0).toUpperCase() + src.slice(1)
-        Avatar.all.push(this)
+        this.onload = () => Avatar.all.push(this)
     }
 }
 class Sprite extends Image {
@@ -16,7 +16,7 @@ class Sprite extends Image {
         this.src = 'img/' + src + '.png';
         this.frames = frames;
         this.preload = true;
-        Sprite.all.push(this)
+        this.onload = () =>Sprite.all.push(this)
     }
 }
 let aya = new Avatar('aya', 'Aya'),

@@ -519,7 +519,7 @@ class Shape {
                 this.kill()
             }
         }
-        if (this.x + this.size < -300 || this.x - this.size > canvas.width + 300 || this.y < -this.size) {
+        if (this.x + this.size < -300 || this.x - this.size > canvas.width + 300 || this.y < -this.size-20) {
             this.kill()
         }
         this.x += this.velocity
@@ -565,7 +565,7 @@ class Shape {
 
                 if (this.img) { 
                     ctx.save()
-                    ctx.arc(0, 0, this.size / 1.7, 0, Math.PI * 2)
+                    ctx.arc(0, 0, this.size / 1.8, 0, Math.PI * 2)
                     
                     ctx.clip()
                     ctx.drawImage(this.img, (-this.size / 2) - 2, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
@@ -635,11 +635,11 @@ class Shape {
 
                 ctx.fillText(this.img.text, 0, this.size * 1.5)
 
-                ctx.arc(0, 0, this.size / 1.75, 0, Math.PI * 2)
+                ctx.arc(0, 0, this.size / 1.8, 0, Math.PI * 2)
                 
                 ctx.clip()
                 ctx.drawImage(this.img,
-                    (-this.size / 2)-2,
+                    (-this.size / 2)-3,
                     (-this.size / 2)-4,
                     this.size * 1.2,
                     this.size * 1.2)
