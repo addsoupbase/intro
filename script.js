@@ -5,15 +5,15 @@ const canvas = $('#canvas')[0],
     username = $('#user')[0],
     ctx = canvas.getContext('2d'),
     date = new Date(),
-    day = new Audio(),
-    night = new Audio(),
+    //day = new Audio(),
+    //night = new Audio(),
     pfp = $('#pfp')[0];
-day.src = 'day.mp3'
-night.src = 'night.mp3'
-day.preload = true
-night.preload = true
-day.loop = night.loop = true;
-day.volume = night.volume = 0.5;
+//day.src = 'day.mp3'
+//night.src = 'night.mp3'
+//day.preload = true
+//night.preload = true
+//day.loop = night.loop = true;
+//day.volume = night.volume = 0.5;
 
 let frame = 0,
     playing = false;
@@ -24,10 +24,33 @@ $('.contain').css({ left: '-300px', opacity: 0 })
     .animate({ left: 0, opacity: 1 }, 'slow')
 function loadPage(page) {
     switch (page) {
+        default: console.error(`Sorry, that did not work`)
+            break;
+        case 'music': {
+            preset.textContent = ''
+            let holder = document.createElement('div')
+            holder.className = 'contain5'
+            preset.appendChild(holder)
+            $(holder).append('<p>🎵 MUSICS I LOVE 🎶</p>')
+
+                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/BjYWwZYLYEs" title="DJ Earworm Mashup - United State of Pop 2014 (Do What You Wanna Do)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/rfFEhd7mk7c" title="DJ Earworm Mashup - United State of Pop 2015 (50 Shades of Pop)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/iNzrwh2Z2hQ" title="DJ Earworm - United State of Pop 2009 (Blame It on the Pop)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/8mGBaXPlri8" title="t.A.T.u. - All The Things She Said (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/QR_qa3Ohwls" title="Ke$ha - Your Love Is My Drug (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+            $('iframe').each(function () {
+                this.click = function () {
+                    day.pause();
+                    night.pause()
+                }
+            })
+        }
+
+            break;
         case 'about': {
             preset.textContent = ''
             let holder = document.createElement('div')
-            holder.className = 'contain3'
+            holder.className = 'containa'
             preset.appendChild(holder)
             let ms = document.createElement('img')
             ms.src = MIS.src
@@ -47,10 +70,73 @@ function loadPage(page) {
             holder.appendChild(texx)
         }
             break;
+        case 'guide': {
+            preset.textContent = ''
+            let holder = document.createElement('div')
+            $(holder).addClass('contain4')
+
+            let texx = document.createElement('p')
+
+            $(preset).append(holder)
+            for (let i = 0; i < 5; i++) {
+                let nn = document.createElement('p')
+
+                if (!i) {
+                    $(nn).html('What does that mean?')
+
+                }
+                else if (i === 1) {
+                    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                    let temp = function () {
+                        return letters[Math.floor(Math.random() * letters.length)]
+                    }
+                    $(nn).html('"' + (temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp()) + '"' + ' (keyboard smash)').addClass('text').css('max-width', '400px')
+                    let ne = document.createElement('p')
+                    $(ne).html('<i>Whenever you see this from me in the chat, it either means I\'m in a silly excited mood, or I just didn\'t know how to respond to a message.</i>').addClass('stext')
+                    $(nn).append(ne)
+                }
+                else if (i === 2) {
+
+                    $(nn).html('Singular Emoji/Random symbol').addClass('text').css('max-width', '400px')
+                    let ne = document.createElement('p')
+                    $(ne).html(`<i>If I just type out a single emoji or symbol like </i><span>🏚️</span><i> in chat it usually indicates that: <br>
+                    <br>
+                    A: The topic reminded me of that emoji and I typed it because it somewhat relates to what is being said. Or<br>
+                    <br>
+                    B: I'm just absent-minded and probably didn't even realise that I typed it in the first place. Or even<br>
+                    <br>
+                    C: Just pasting something to see how it looks like</i>`).addClass('stext')
+                    $(nn).append(ne)
+                }
+
+                else if (i === 3) {
+
+                    $(nn).html('"AAA" or "AA"').addClass('text').css('max-width', '400px')
+                    let ne = document.createElement('p')
+                    $(ne).html
+                        (`<i>Usually just means I want to contribute to the convo but have nothing to say.<br>`).addClass('stext')
+                    $(nn).append(ne)
+                }
+
+                else if (i === 4) {
+
+                    $(nn).html('Overgreeting').addClass('text').css('max-width', '400px')
+                    let ne = document.createElement('p')
+                    $(ne).html
+                        (`<i>When I'm like </i><q>HIIIII [user] OMG HELLO HEYYY [keyboard smash]</q><i>!! It's because I really like being so energetic towards people and it's even better when they match the energy!`).addClass('stext')
+                    $(nn).append(ne)
+                }
+
+
+                $(holder).append(nn)
+
+            }
+        }
+            break
         case 'love': {
             preset.textContent = ''
             let holder = document.createElement('div')
-            holder.className = 'contain3'
+            holder.className = 'containa'
             preset.appendChild(holder)
 
             let texx = document.createElement('p')
@@ -125,6 +211,9 @@ function loadPage(page) {
                 }
                 mac.appendChild(btnn)
             }
+
+            $(holder).append(`<p>Video I made</p>`).append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/YOtUQFXhmwA" title="Kirby super ability themes in order" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+
             let texx = document.createElement('p')
             texx.className = 'subtext'
             texx.style.fontSize = '15px'
@@ -290,7 +379,7 @@ function Update() {
     }
     if (!(frame % 100)) {
         let nn = new Shape('poke')
-        nn.img = Math.choose(gorebyss, phione, sharpedo, kyogre, manaphy, carvanha, huntail, seadra, corsola, Math.choose(wailord, wailord, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturn, lanturnShiny));
+        nn.img = Math.choose(...Sprite.all);
         nn.velocity *= 0.7
     }
     ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
@@ -605,14 +694,14 @@ class Shape {
                         crop.y = 320
                         this.velocity = 0.5 * Math.sign(this.velocity)
                         break;
-                    case lanturnShiny:
-                        if (!(frame % 10)) {
-                            let shine = new Shape('sparkle')
-                            shine.size = 4 + Math.random() * 2
-                            shine.x = this.x + Math.random() * 30 * Math.choose(1, -1)
-                            shine.opacity = 1
-                            shine.y = this.y + Math.random() * 30 * Math.choose(1, -1)
-                        }
+                    /*   case lanturnShiny:
+                           if (!(frame % 10)) {
+                               let shine = new Shape('sparkle')
+                               shine.size = 4 + Math.random() * 2
+                               shine.x = this.x + Math.random() * 30 * Math.choose(1, -1)
+                               shine.opacity = 1
+                               shine.y = this.y + Math.random() * 30 * Math.choose(1, -1)
+                           }*/
                     case lanturn:
                         crop.x = 50;
                         crop.y = 70
@@ -669,7 +758,8 @@ mousepos.x = o.x
 mousepos.y = o.y
 
 })
-*/$('*').focus(function () {
+*/
+/*$('*').focus(function () {
     if (!playing) {
         playing = true;
         if (date.getHours() > 20 || date.getHours() < 6) {
@@ -680,7 +770,7 @@ mousepos.y = o.y
 
         }
     }
-})
+})*/
 $(document).click(function (c) {
     for (let o of Shape._) {
         if (o.unpoppable) {
