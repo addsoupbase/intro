@@ -39,7 +39,8 @@ let aya = new Avatar('aya', 'Aya'),
     mmaddie = new Avatar('mothmaddie'),
     neboola = new Avatar('neboola'),
     znx = new Avatar('znsxxe'),
-    vio = new Avatar('vio')
+    vio = new Avatar('vio'),
+    khaotic = new Avatar("khaotic","khaotic good")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
 phione = new Sprite('phionesprite', 10),
