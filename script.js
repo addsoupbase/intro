@@ -737,7 +737,7 @@ class Shape {
                         break
                 }
                 {
-                    if (this.frame > this.img.frames - 1) {
+                    if (this.frame > this.img?.frames - 1) {
                         this.frame = 0
                     }
 
