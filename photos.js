@@ -1,6 +1,10 @@
 'use strict';
 class Avatar extends Image {
     static all = []
+    static cycle = function* () {
+        yield* Avatar.all
+    }
+    static current = Avatar.cycle()
     constructor(src, text) {
         super()
         this.src = 'img/avatars/' + src + '.png'
@@ -16,7 +20,7 @@ class Sprite extends Image {
         this.src = 'img/' + src + '.png';
         this.frames = frames;
         this.preload = true;
-        this.onload = () =>Sprite.all.push(this)
+        this.onload = () => Sprite.all.push(this)
     }
 }
 let aya = new Avatar('aya', 'Aya'),
@@ -40,14 +44,14 @@ let aya = new Avatar('aya', 'Aya'),
     neboola = new Avatar('neboola'),
     znx = new Avatar('znsxxe'),
     vio = new Avatar('vio'),
-    khaotic = new Avatar("khaotic","khaotic good"),
+    khaotic = new Avatar("khaotic", "khaotic good"),
     kae = new Avatar("kae"),
     rohan = new Avatar("rohan"),
-    bbg = new Avatar("bbg","bbg.avarice"),
-    rainmint = new Avatar ("rainmint")
+    bbg = new Avatar("bbg", "bbg.avarice"),
+    rainmint = new Avatar("rainmint")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
-phione = new Sprite('phionesprite', 10),
+    phione = new Sprite('phionesprite', 10),
     sharpedo = new Sprite('sharpedospritesheet', 8),
     kyogre = new Sprite('kyogrespritesheet', 10),
     manaphy = new Sprite('manaphysprite', 8),
@@ -55,7 +59,7 @@ phione = new Sprite('phionesprite', 10),
     huntail = new Sprite('huntailsprite', 4),
     carvanha = new Sprite('carvanhasprite', 4),
     lanturn = new Sprite('lanturnsprite', 4),
-   // lanturnShiny = new Sprite('lanturnshinysprite', 4),
+    // lanturnShiny = new Sprite('lanturnshinysprite', 4),
     corsola = new Sprite('corsolasprite', 4),
     wailord = new Sprite('wailordsprite', 12)
 

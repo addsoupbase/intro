@@ -484,7 +484,15 @@ class Shape {
         this.invuln = false
         this.unpoppable = false
         this.popped = false
-        this.img = Math.choose(...Avatar.all)
+        let  n = Avatar.current.next()
+        if (!n.done) {
+            this.img = n.value
+
+        }
+        else {
+            Avatar.current = Avatar.cycle()
+            this.img = Avatar.current.next().value
+        }
         this.text = text ?? Math.choose(...Shape.phrases)
         // this.x = Math.choose(0 - this.size, canvas.width + this.size)
         this.rot = 0;
@@ -565,10 +573,10 @@ class Shape {
 
                 if (this.img) { 
                     ctx.save()
-                    ctx.arc(0, 0, this.size / 1.8, 0, Math.PI * 2)
+                    ctx.arc(-2, 1, this.size / 1.7, 0, Math.PI * 2)
                     
                     ctx.clip()
-                    ctx.drawImage(this.img, (-this.size / 2) - 2, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
+                    ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
                 ctx.restore()
                 }
                 ctx.beginPath()
