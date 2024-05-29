@@ -19,7 +19,7 @@ class Sprite extends Image {
         super()
         this.src = 'img/' + src + '.png';
         this.frames = frames;
-        this.preload = true;
+        this.preload = true; 
         this.onload = () => Sprite.all.push(this)
     }
 }
