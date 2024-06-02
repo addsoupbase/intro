@@ -140,7 +140,7 @@ div {
 .contain5 {
     border: 5px solid rgb(96, 8, 8);
     border-radius: 5px;
-    max-width: 300px;
+    max-width: 500px;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 400px;
