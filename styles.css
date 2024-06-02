@@ -93,7 +93,7 @@ div {
     border: 5px solid rgb(8, 96, 62);
     border-radius: 5px;
     max-width: fit-content;
-    max-height: fit-content(5464320%);
+    max-height: fit-content;
     background-color: rgba(13, 148, 99, 0.7);
 }
 
