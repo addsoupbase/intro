@@ -40,7 +40,8 @@
 span {
     font-size: 30px;
 }
-
+img {
+object-fit:cover}
 iframe {
     border: 5px solid #413ef4;
     border-radius: 5px;
