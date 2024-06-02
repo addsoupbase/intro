@@ -324,7 +324,6 @@ function Update() {
     ctx.imageSmoothingQuality = 'high'
     cycleColour()
     pfp.style.borderColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`
-    pfp.style.borderRadius = '30px'
     /* radius *= 1.1;
      if (radius > 1) {
          radius = 1
