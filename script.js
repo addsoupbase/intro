@@ -17,7 +17,9 @@ const canvas = $('#canvas')[0],
 
 let frame = 0,
     playing = false;
-
+function hide(){
+    $('#main').fadeOut().children().fadeOut()
+}
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
 const preset = $('#preset')[0]
 $('.contain').css({ left: '-300px', opacity: 0 })
