@@ -318,13 +318,13 @@ let time = setInterval(() => {
         username.innerHTML = '&nbsp;'
     }
 }, 300)
+ctx.imageSmoothingQuality = 'high'
 
 function Update() {
     frame = requestAnimationFrame(Update)
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.imageSmoothingQuality = 'high'
     cycleColour()
     pfp.style.borderColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`
     /* radius *= 1.1;
@@ -576,6 +576,7 @@ class Shape {
                 ctx.translate(this.x, this.y)
 
                 if (this.img) {
+                    ctx.imageSmoothingEnabled=false
                     ctx.save()
                     ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
 
@@ -634,6 +635,7 @@ class Shape {
             }
                 break
             case 'image': {
+                ctx.imageSmoothingEnabled=false
                 ctx.globalAlpha = 1
                 this.velocityY = -1;
                 this.velocity = 0
@@ -681,7 +683,7 @@ class Shape {
             }
                 break;
             case 'poke':
-
+                ctx.imageSmoothingEnabled = true
                 this.unpoppable = true
                 ctx.globalAlpha = 1
                 ctx.save()
