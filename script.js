@@ -499,7 +499,7 @@ class Shape {
         // this.x = Math.choose(0 - this.size, canvas.width + this.size)
         this.rot = 0;
         this.opacity = 0.5
-        this.font = `${this.size}px ${Math.choose(...Shape.fonts)}`
+        this.font = `${this.size-10}px ${Math.choose(...Shape.fonts)}`
         this.color = Math.choose(...Shape.colors)
         this.velocity = 2
         this.velocity *= Math.choose(1, -1)
@@ -564,6 +564,7 @@ class Shape {
                     ctx.font = this.font
                     ctx.fillStyle = '#550ca8'
                     ctx.fillText(this.text, this.x, this.y)
+                    ctx.strokeStyle='white'
                 }
                 break;
             case 'bubble': {
@@ -575,7 +576,7 @@ class Shape {
 
                 if (this.img) { 
                     ctx.save()
-                    ctx.arc(-2, 1, this.size / 1.7, 0, Math.PI * 2)
+                    ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
                     
                     ctx.clip()
                     ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
@@ -644,8 +645,10 @@ class Shape {
 
 
                 ctx.fillText(this.img.text, 0, this.size * 1.5)
-
-                ctx.arc(0, 0, this.size / 1.8, 0, Math.PI * 2)
+               /// ctx.strokeStyle='grey'
+              ///  ctx.lineWidth=1
+              //  ctx.strokeText(this.img.text,0,this.size*1.5)
+                ctx.arc(0, 0, this.size / 1.6, 0, Math.PI * 2)
                 
                 ctx.clip()
                 ctx.drawImage(this.img,
