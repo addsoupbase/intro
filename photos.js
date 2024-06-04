@@ -48,7 +48,8 @@ let aya = new Avatar('aya', 'Aya'),
     kae = new Avatar("kae"),
     rohan = new Avatar("rohan"),
     bbg = new Avatar("bbg", "bbg.avarice"),
-    rainmint = new Avatar("rainmint")
+    rainmint = new Avatar("rainmint"),
+    rue = new Avatar("rue")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
