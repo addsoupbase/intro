@@ -42,8 +42,8 @@ function loadPage(page) {
                 .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/QR_qa3Ohwls" title="Ke$ha - Your Love Is My Drug (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
             $('iframe').each(function () {
                 this.click = function () {
-                    day.pause();
-                    night.pause()
+                    
+                    
                 }
             })
         }
