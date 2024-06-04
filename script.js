@@ -5,9 +5,9 @@ const canvas = $('#canvas')[0],
     username = $('#user')[0],
     ctx = canvas.getContext('2d'),
     date = new Date(),
-    //day = new Audio(),
-    //night = new Audio(),
-    pfp = $('#pfp')[0];
+        //day = new Audio(),
+        //night = new Audio(),
+        pfp = $('#pfp')[0];
 //day.src = 'day.mp3'
 //night.src = 'night.mp3'
 //day.preload = true
@@ -17,8 +17,8 @@ const canvas = $('#canvas')[0],
 
 let frame = 0,
     playing = false;
-function hide(){
-    $('#main').fadeOut().children().fadeOut()
+function hide() {
+    $('#main').fadeOut()
 }
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
 const preset = $('#preset')[0]
@@ -42,8 +42,8 @@ function loadPage(page) {
                 .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/QR_qa3Ohwls" title="Ke$ha - Your Love Is My Drug (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
             $('iframe').each(function () {
                 this.click = function () {
-                    
-                    
+
+
                 }
             })
         }
@@ -214,13 +214,14 @@ function loadPage(page) {
                 mac.appendChild(btnn)
             }
 
-            $(holder).append(`<p>Video I made</p>`).append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/YOtUQFXhmwA" title="Kirby super ability themes in order" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
 
             let texx = document.createElement('p')
             texx.className = 'subtext'
             texx.style.fontSize = '15px'
             texx.innerHTML = 'the above is pokemon art i made using sprites from the games (i only made the scene)'
             holder.appendChild(texx)
+            $(holder).append(`<p>Video I made</p>`).append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/YOtUQFXhmwA" title="Kirby super ability themes in order" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
+
             let xnbhy = document.createElement('p')
             xnbhy.className = 'main'
             xnbhy.innerHTML = 'Online Stuff'
@@ -486,7 +487,7 @@ class Shape {
         this.invuln = false
         this.unpoppable = false
         this.popped = false
-        let  n = Avatar.current.next()
+        let n = Avatar.current.next()
         if (!n.done) {
             this.img = n.value
 
@@ -499,7 +500,7 @@ class Shape {
         // this.x = Math.choose(0 - this.size, canvas.width + this.size)
         this.rot = 0;
         this.opacity = 0.5
-        this.font = `${this.size-10}px ${Math.choose(...Shape.fonts)}`
+        this.font = `${this.size - 10}px ${Math.choose(...Shape.fonts)}`
         this.color = Math.choose(...Shape.colors)
         this.velocity = 2
         this.velocity *= Math.choose(1, -1)
@@ -529,7 +530,7 @@ class Shape {
                 this.kill()
             }
         }
-        if (this.x + this.size < -300 || this.x - this.size > canvas.width + 300 || this.y < -this.size-20) {
+        if (this.x + this.size < -300 || this.x - this.size > canvas.width + 300 || this.y < -this.size - 20) {
             this.kill()
         }
         this.x += this.velocity
@@ -564,7 +565,7 @@ class Shape {
                     ctx.font = this.font
                     ctx.fillStyle = '#550ca8'
                     ctx.fillText(this.text, this.x, this.y)
-                    ctx.strokeStyle='white'
+                    ctx.strokeStyle = 'white'
                 }
                 break;
             case 'bubble': {
@@ -574,13 +575,13 @@ class Shape {
                 ctx.save()
                 ctx.translate(this.x, this.y)
 
-                if (this.img) { 
+                if (this.img) {
                     ctx.save()
                     ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
-                    
+
                     ctx.clip()
-                    ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2) 
-                ctx.restore()
+                    ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2)
+                    ctx.restore()
                 }
                 ctx.beginPath()
                 ctx.arc(0, 0, this.size, 0, Math.PI * 2)
@@ -645,15 +646,15 @@ class Shape {
 
 
                 ctx.fillText(this.img.text, 0, this.size * 1.5)
-               /// ctx.strokeStyle='grey'
-              ///  ctx.lineWidth=1
-              //  ctx.strokeText(this.img.text,0,this.size*1.5)
+                /// ctx.strokeStyle='grey'
+                ///  ctx.lineWidth=1
+                //  ctx.strokeText(this.img.text,0,this.size*1.5)
                 ctx.arc(0, 0, this.size / 1.6, 0, Math.PI * 2)
-                
+
                 ctx.clip()
                 ctx.drawImage(this.img,
-                    (-this.size / 2)-3,
-                    (-this.size / 2)-4,
+                    (-this.size / 2) - 3,
+                    (-this.size / 2) - 4,
                     this.size * 1.2,
                     this.size * 1.2)
                 ctx.restore()

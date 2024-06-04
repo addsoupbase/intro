@@ -10,7 +10,7 @@ class Avatar extends Image {
         this.src = 'img/avatars/' + src + '.png'
         this.preload = true;
         this.text = text ?? src.charAt(0).toUpperCase() + src.slice(1)
-        this.onload = () => {Avatar.all.push(this);console.log(this.src + ' Loaded :)')}
+        this.onload = () => { Avatar.all.push(this); console.log(this.src + ' Loaded :)') }
     }
 }
 class Sprite extends Image {
@@ -19,8 +19,8 @@ class Sprite extends Image {
         super()
         this.src = 'img/' + src + '.png';
         this.frames = frames;
-        this.preload = true; 
-        this.onload = () => {Sprite.all.push(this);console.log(this.src + ' Loaded :)')}
+        this.preload = true;
+        this.onload = () => { Sprite.all.push(this); console.log(this.src + ' Loaded :)') }
     }
 }
 let aya = new Avatar('aya', 'Aya'),
@@ -50,7 +50,7 @@ let aya = new Avatar('aya', 'Aya'),
     bbg = new Avatar("bbg", "bbg.avarice"),
     rainmint = new Avatar("rainmint"),
     rue = new Avatar("rue"),
-    copy = new Avatar('copy','CopyID')
+    copy = new Avatar('copy', 'CopyID')
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
