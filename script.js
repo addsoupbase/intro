@@ -576,7 +576,7 @@ class Shape {
                 ctx.translate(this.x, this.y)
 
                 if (this.img) {
-                    ctx.imageSmoothingEnabled=false
+                 //   ctx.imageSmoothingEnabled=false
                     ctx.save()
                     ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
 
@@ -635,7 +635,7 @@ class Shape {
             }
                 break
             case 'image': {
-                ctx.imageSmoothingEnabled=false
+         //       ctx.imageSmoothingEnabled=false
                 ctx.globalAlpha = 1
                 this.velocityY = -1;
                 this.velocity = 0
