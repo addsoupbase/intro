@@ -51,7 +51,8 @@ let aya = new Avatar('aya', 'Aya'),
     rainmint = new Avatar("rainmint"),
     rue = new Avatar("rue"),
     copy = new Avatar('copy', 'CopyID'),
-    valerie = new Avatar('valerie')
+    valerie = new Avatar('valerie'),
+    nova = new Avatar('nova',"supernova")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
