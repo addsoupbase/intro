@@ -53,7 +53,8 @@ let aya = new Avatar('aya', 'Aya'),
     copy = new Avatar('copy', 'CopyID'),
     valerie = new Avatar('valerie'),
     nova = new Avatar('nova',"supernova"),
-    mr_clownette = new Avatar('mr_clownette')
+    mr_clownette = new Avatar('mr_clownette'),
+    stuella = new Avatar('stu',"Stuella")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
