@@ -579,7 +579,6 @@ class Shape {
                  //   ctx.imageSmoothingEnabled=false
                     ctx.save()
                     ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
-
                     ctx.clip()
                     ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2)
                     ctx.restore()
