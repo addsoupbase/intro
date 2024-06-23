@@ -66,7 +66,8 @@ let aya = new Avatar('aya', 'Aya'),
     stu = new Avatar('stu2','Stu'),
     ashley = new Avatar('ashley'),
     lexi = new Avatar("lexi"),
-    babs = new Avatar("babs")
+    babs = new Avatar("babs"),
+    elipoopsrainbows= new Avatar("elipoopsrainbows")
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
