@@ -79,7 +79,10 @@ let AvatarStack = [
     ["ledan"],
     ["luna"],
     ['mephistopheles73', 'God ruheub'],
-    ['lazy']
+    ['lazy'],
+    ['zoozi'],
+    ['glente'],
+    ['morrfie']
 ]
 for (let [file, name] of AvatarStack) {
     if (name) {
