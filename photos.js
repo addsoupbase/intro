@@ -19,6 +19,7 @@ class Avatar extends Image {
             //   console.log(this.src + ' Loaded :)') 
         }
         this.onerror = () => {
+            console.error(this.src)
             if (this.src.includes('.png')) {
                 this.src = this.src.replace('.png', '.jpg')
             }
@@ -41,7 +42,6 @@ class Sprite extends Image {
 let AvatarStack = [
     ["aya", "Aya"],
     ["ghostie"],
-    ["retro"],
     ["cunder"],
     ["lorex"],
     ["fourche", 'fourche7'],
@@ -78,7 +78,8 @@ let AvatarStack = [
     ["elenfnf1"],
     ["ledan"],
     ["luna"],
-    ['mephistopheles73', 'God ruheub']
+    ['mephistopheles73', 'God ruheub'],
+    ['lazy']
 ]
 for (let [file, name] of AvatarStack) {
     if (name) {
@@ -88,45 +89,6 @@ for (let [file, name] of AvatarStack) {
         new Avatar(file)
     }
 }
-/*let aya = new Avatar('aya', 'Aya'),
-    ghostie = new Avatar('ghostie',),
-    retro = new Avatar('retro',),
-    cunder = new Avatar('cunder',),
-    lorex = new Avatar('lorex',),
-    fourche = new Avatar('fourche',),
-    rogue = new Avatar('rogue',),
-    indie = new Avatar('indie',),
-    casey = new Avatar('casey',),
-    chlo = new Avatar('chlo',),
-    crazy = new Avatar('crazy',),
-    drifter = new Avatar('drifter'),
-    gilly = new Avatar('gilly'),
-    bugs = new Avatar('ilikebugs2', 'i_likebugs2'),
-    lunza = new Avatar('lunza'),
-    may = new Avatar('may'),
-    mmaddie = new Avatar('mothmaddie'),
-    neboola = new Avatar('neboola'),
-    znx = new Avatar('znsxxe'),
-    vio = new Avatar('vio'),
-    khaotic = new Avatar("khaotic", "khaotic good"),
-    kae = new Avatar("kae"),
-    rohan = new Avatar("rohan"),
-    rainmint = new Avatar("rainmint"),
-    rue = new Avatar("rue"),
-    copy = new Avatar('copy', 'CopyID'),
-    valerie = new Avatar('valerie'),
-    nova = new Avatar('nova', "supernova"),
-    mr_clownette = new Avatar('mr_clownette'),
-    stuella = new Avatar('stu', "Stuella"),
-    stu = new Avatar('stu2', 'Stu'),
-    ashley = new Avatar('ashley'),
-    lexi = new Avatar("lexi"),
-    babs = new Avatar("babs"),
-    elipoopsrainbows = new Avatar("elipoopsrainbows"),
-    birdie = new Avatar("birdie"),
-    elen = new Avatar("elenfnf1"),
-    ledan = new Avatar("ledan"),
-    luna = new Avatar('luna')*/
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
