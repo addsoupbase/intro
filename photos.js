@@ -82,7 +82,8 @@ let AvatarStack = [
     ['lazy'],
     ['zoozi'],
     ['glente'],
-    ['morrfie']
+    ['morrfie'],
+    ['random']
 ]
 for (let [file, name] of AvatarStack) {
     if (name) {
