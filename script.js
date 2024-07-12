@@ -578,9 +578,10 @@ class Shape {
                 if (this.img) {
                  //   ctx.imageSmoothingEnabled=false
                     ctx.save()
-                    ctx.arc(-2, 1, this.size / 1.6, 0, Math.PI * 2)
+                    ctx.arc(0, 0, this.img.width/3, 0, Math.PI * 2)
                     ctx.clip()
-                    ctx.drawImage(this.img, (-this.size / 2) - 4, (-this.size / 2) - 2, this.size * 1.2, this.size * 1.2)
+                
+                    ctx.drawImage(this.img, (-this.img.width / 2)/1.5, (-this.img.height / 2)/1.5, this.img.width/1.5, this.img.height/1.5)
                     ctx.restore()
                 }
                 ctx.beginPath()
@@ -650,14 +651,16 @@ class Shape {
                 /// ctx.strokeStyle='grey'
                 ///  ctx.lineWidth=1
                 //  ctx.strokeText(this.img.text,0,this.size*1.5)
-                ctx.arc(0, 0, this.size / 1.6, 0, Math.PI * 2)
+                ctx.arc(0, 0, this.img.height/2, 0, Math.PI * 2)
 
                 ctx.clip()
                 ctx.drawImage(this.img,
-                    (-this.size / 2) - 3,
-                    (-this.size / 2) - 4,
-                    this.size * 1.2,
-                    this.size * 1.2)
+                     (-this.img.width / 2), 
+                     (-this.img.height / 2), 
+                     this.img.width, 
+                     this.img.height)
+
+
                 ctx.restore()
             }
                 break;
