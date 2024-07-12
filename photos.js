@@ -70,7 +70,8 @@ let aya = new Avatar('aya', 'Aya'),
     elipoopsrainbows= new Avatar("elipoopsrainbows"),
     birdie=new Avatar("birdie"),
     elen=new Avatar("elenfnf1"),
-    ledan=new Avatar("ledan")
+    ledan=new Avatar("ledan"),
+    luna=new Avatar('luna')
 
 let gorebyss = new Sprite('gorebyssspritesheet', 9),
     phione = new Sprite('phionesprite', 10),
