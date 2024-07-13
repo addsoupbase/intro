@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
+
 <head>
     <title>Intro</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet' defer>
     <link rel="icon" type="image/x-icon" href="favicon.ico" defer>
-<meta name="viewport" content="width=device-width">
-<meta property="og:title" content="🌊🌊🌊" />
-<meta property="og:description" content="🫧 °• Underwater themed intro with bubbles :3 •° 🫧" />
-<!---<meta property="og:image" content="url" />--->
-<meta property="og:url" content="https://addsoupbase.github.io/intro" />
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="🌊🌊🌊" />
+    <meta property="og:description" content="🫧 °• Underwater themed intro with bubbles :3 •° 🫧" />
+    <!---<meta property="og:image" content="url" />--->
+    <meta property="og:url" content="https://addsoupbase.github.io/intro" />
 
 </head>
 
@@ -18,22 +19,52 @@
 
     </canvas>
     <div class="contain" id="main">
-        <p id="user">&nbsp;</p>
-        <img src="img/sparkle_cropped.png" title="Sparkles drawn by Indie" width="25%" height="25%" id="pfp">
-        <div>
-            <p class="main">HIIII welcome :D</p>
-            <p class="subtext">press a button hehe</p><button class="btn" onclick="loadPage('about')">About Me</button><button class="btn"
-                onclick="loadPage('made')">My Art</button><button class="btn" onclick="loadPage('guide')">Vocab</button><button class="btn" onclick="loadPage('music')">Music</button><button class="btn" onclick="loadPage('love')">❤️</button>
 
-        </div>
-        <div id="preset">
-            <p class="subtext">i love you</p>
-            <p class="subtext">(click the bubbles to pop)</p>
+        <div class="parent">
+            <p id="user">&nbsp;</p>
+            <img src="img/sparkle_cropped.png" title="Sparkles drawn by Indie" width="25%" height="25%" id="pfp">
+
+            <p class="main">HIIII welcome :D</p>
             <button class="btn" onclick="hide()">Hide</button>
 
+            <p class="subtext">i love you</p>
+            <p class="subtext">(click the bubbles to pop)</p>
+
         </div>
 
-        <p></p>
+        <div id='about' class="parent">
+            <p>I am your average Dumb american😜🇲🇾</p>
+            <img src="./img/towa.gif" width="100" title="Current Avatar" class="avatar">
+            <p>Current avatar:
+                <br><b>Tokoyami Towa</b> dancing table gif
+            </p>
+            <p>🚧Im redoing the site right now!🚧</p>
+            <p>So thats why a lot of stuff is gone for now</p>
+        </div>
+
+
+         <div id="gallery" class="parent">
+            <div class="picture">
+                
+                <img src="img/blaziken.png" class="pic" title="Chilling">
+                <img src="img/lurantis.png" class="pic" title="Sunny Day">    
+                <img src="img/wynaut4_cropped.png" class="pic" title="Shiny">
+                <img src="img/nosepass.png" title="F.E.A.R.">
+                <img src="img/sprigatto.png" title="Relaxed">
+                <img src="img/bleh.png" class="pic" height="300px" title="Legendary fight">
+            <img src="img/suicune.png" title="Waterfall">
+        </div>
+
+         </div>
+        <div>
+            <button class="btn" onclick="load('about')">About Me</button>
+            <button class="btn" onclick="load('gallery')">Gallery</button>
+
+        </div>
+
+
+
+
 
     </div>
 
@@ -42,5 +73,5 @@
 
 <script src="photos.js"></script>
 <script src="script.js"></script>
-</html>
 
+</html>

@@ -107,7 +107,9 @@ let gorebyss = new Sprite('gorebyssspritesheet', 9),
     corsola = new Sprite('corsolasprite', 4),
     wailord = new Sprite('wailordsprite', 12)
 
-
+for (let i = 0; i < 4; i++) {
+    Sprite.all.push(gorebyss,phione,sharpedo,manaphy,gorebyss,manaphy,seadra,huntail,carvanha,carvanha,lanturn,corsola)
+}
 
 
 

@@ -5,9 +5,9 @@ const canvas = $('#canvas')[0],
     username = $('#user')[0],
     ctx = canvas.getContext('2d'),
     date = new Date(),
-        //day = new Audio(),
-        //night = new Audio(),
-        pfp = $('#pfp')[0];
+    //day = new Audio(),
+    //night = new Audio(),
+    pfp = $('#pfp')[0];
 //day.src = 'day.mp3'
 //night.src = 'night.mp3'
 //day.preload = true
@@ -22,256 +22,20 @@ function hide() {
 }
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
 const preset = $('#preset')[0]
+
+
 $('.contain').css({ left: '-300px', opacity: 0 })
     .animate({ left: 0, opacity: 1 }, 'slow')
-function loadPage(page) {
-    switch (page) {
-        default: console.error(`Sorry, that did not work`)
-            break;
-        case 'music': {
-            preset.textContent = ''
-            let holder = document.createElement('div')
-            holder.className = 'contain5'
-            preset.appendChild(holder)
-            $(holder).append('<p>🎵 MUSICS I LOVE 🎶</p>')
-
-                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/BjYWwZYLYEs" title="DJ Earworm Mashup - United State of Pop 2014 (Do What You Wanna Do)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/rfFEhd7mk7c" title="DJ Earworm Mashup - United State of Pop 2015 (50 Shades of Pop)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/iNzrwh2Z2hQ" title="DJ Earworm - United State of Pop 2009 (Blame It on the Pop)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/8mGBaXPlri8" title="t.A.T.u. - All The Things She Said (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-                .append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/QR_qa3Ohwls" title="Ke$ha - Your Love Is My Drug (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-            $('iframe').each(function () {
-                this.click = function () {
-
-
-                }
-            })
-        }
-
-            break;
-        case 'about': {
-            preset.textContent = ''
-            let holder = document.createElement('div')
-            holder.className = 'containa'
-            preset.appendChild(holder)
-            let ms = document.createElement('img')
-            ms.src = MIS.src
-            ms.width = 150
-            let nxx = document.createElement('p')
-            $(nxx).html('YOUR STEREOTYPICAL DUMB AMERICAN')
-            holder.appendChild(nxx)
-            ms.title = "Misdreavus, Drawn by Indie"
-            ms.className = 'contain2'
-            holder.appendChild(document.createElement('p'))
-
-            holder.appendChild(ms)
-            let texx = document.createElement('p')
-            texx.className = 'subtext'
-            texx.style.fontSize = '15px'
-            texx.innerHTML = 'HII i really like misdreavus and the colour teal. IM REALLY HYPER AND SILLY SOMETIMES So if i just like type random stuff in chat that makes no sense just ignore it!! i try to be nice to everyone when i can and try not to argue with people. i like doing software development like this website, i made it myself and worked really hard on it so i hope you like it! i know theres not much yet though'
-            holder.appendChild(texx)
-        }
-            break;
-        case 'guide': {
-            preset.textContent = ''
-            let holder = document.createElement('div')
-            $(holder).addClass('contain4')
-
-            let texx = document.createElement('p')
-
-            $(preset).append(holder)
-            for (let i = 0; i < 5; i++) {
-                let nn = document.createElement('p')
-
-                if (!i) {
-                    $(nn).html('What does that mean?')
-
-                }
-                else if (i === 1) {
-                    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-                    let temp = function () {
-                        return letters[Math.floor(Math.random() * letters.length)]
-                    }
-                    $(nn).html('"' + (temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp() + temp()) + '"' + ' (keyboard smash)').addClass('text').css('max-width', '400px')
-                    let ne = document.createElement('p')
-                    $(ne).html('<i>Whenever you see this from me in the chat, it either means I\'m in a silly excited mood, or I just didn\'t know how to respond to a message.</i>').addClass('stext')
-                    $(nn).append(ne)
-                }
-                else if (i === 2) {
-
-                    $(nn).html('Singular Emoji/Random symbol').addClass('text').css('max-width', '400px')
-                    let ne = document.createElement('p')
-                    $(ne).html(`<i>If I just type out a single emoji or symbol like </i><span>🏚️</span><i> in chat it usually indicates that: <br>
-                    <br>
-                    A: The topic reminded me of that emoji and I typed it because it somewhat relates to what is being said. Or<br>
-                    <br>
-                    B: I'm just absent-minded and probably didn't even realise that I typed it in the first place. Or even<br>
-                    <br>
-                    C: Just pasting something to see how it looks like</i>`).addClass('stext')
-                    $(nn).append(ne)
-                }
-
-                else if (i === 3) {
-
-                    $(nn).html('"AAA" or "AA"').addClass('text').css('max-width', '400px')
-                    let ne = document.createElement('p')
-                    $(ne).html
-                        (`<i>Usually just means I want to contribute to the convo but have nothing to say.<br>`).addClass('stext')
-                    $(nn).append(ne)
-                }
-
-                else if (i === 4) {
-
-                    $(nn).html('Overgreeting').addClass('text').css('max-width', '400px')
-                    let ne = document.createElement('p')
-                    $(ne).html
-                        (`<i>When I'm like </i><q>HIIIII [user] OMG HELLO HEYYY [keyboard smash]</q><i>!! It's because I really like being so energetic towards people and it's even better when they match the energy!`).addClass('stext')
-                    $(nn).append(ne)
-                }
-
-
-                $(holder).append(nn)
-
-            }
-        }
-            break
-        case 'love': {
-            preset.textContent = ''
-            let holder = document.createElement('div')
-            holder.className = 'containa'
-            preset.appendChild(holder)
-
-            let texx = document.createElement('p')
-            texx.className = 'subtext'
-            texx.style.fontSize = '15px'
-            texx.innerHTML = 'there are SO MANY PEOPLE but thank you all <3 i will put everyone on here eventually so please be patient as it takes a lot of work'
-
-            holder.appendChild(texx)
-            for (let i = 0; i < 5; i++) {
-                let asda = document.createElement('img')
-                switch (i) {
-                    case 0:
-                        asda.src = 'img/uhhuh.gif'
-                        break;
-                    case 1:
-                        asda.src = 'img/hypip.gif'
-                        break;
-                    case 4:
-                        asda.src = 'img/hyper.gif'
-                        break;
-                    case 3:
-                        asda.src = 'img/kirlia.gif'
-                        break;
-                    case 2:
-                        asda.src = 'img/misdreavushop.gif'
-                        break;
-                }
-                holder.appendChild(asda)
-            }
-
-        }
-            break;
-        case 'made': {
-            preset.textContent = ''
-            let holder = document.createElement('div')
-            holder.className = 'contain3'
-            preset.appendChild(holder)
-            let ms = document.createElement('img')
-            ms.src = art1.src
-            ms.width = 300
-            ms.id = 'imagee'
-            ms.className = 'contain2'
-
-            holder.appendChild(document.createElement('p'))
-            holder.appendChild(ms)
-            let mac = document.createElement('div')
-            holder.appendChild(mac)
-            for (let i = 0; i < 2; i++) {
-                let btnn = document.createElement('button')
-                btnn.className = 'btn'
-                btnn.innerHTML = i ? '>' : '<'
-                btnn.style.position = 'relative'
-                btnn.style.bottom = '-5px'
-                btnn.onclick = i ? function () {
-                    cu++
-                    if (cu > sources.length - 1) {
-                        cu = 0
-                    }
-                    let IMG = $('#imagee')[0]
-                    IMG.src = sources[cu].src
-
-                } : function () {
-                    cu--
-                    if (cu < 0) {
-                        cu = sources.length - 1
-                    }
-                    let IMG = $('#imagee')[0]
-                    IMG.src = sources[cu].src
 
 
 
-                }
-                mac.appendChild(btnn)
-            }
 
-
-            let texx = document.createElement('p')
-            texx.className = 'subtext'
-            texx.style.fontSize = '15px'
-            texx.innerHTML = 'the above is pokemon art i made using sprites from the games (i only made the scene)'
-            holder.appendChild(texx)
-            $(holder).append(`<p>Video I made</p>`).append(`<iframe onfocus='day.pause();night.pause()' src="https://www.youtube.com/embed/YOtUQFXhmwA" title="Kirby super ability themes in order" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`)
-
-            let xnbhy = document.createElement('p')
-            xnbhy.className = 'main'
-            xnbhy.innerHTML = 'Online Stuff'
-            holder.appendChild(xnbhy)
-            {
-                let runningOutOfNameIdeas = document.createElement('a')
-                runningOutOfNameIdeas.href = 'https://addsoupbase.github.io/whatever'
-                runningOutOfNameIdeas.innerHTML = 'Recursive Shape Thing'
-                holder.appendChild(runningOutOfNameIdeas)
-
-            }
-            {
-                let texx2 = document.createElement('p')
-                texx2.className = 'subtext'
-                texx2.style.fontSize = '15px'
-                texx2.innerHTML = 'I\'m honestly not really sure what this is but i like what i made and i learned a lot'
-                holder.appendChild(texx2)
-            }
-            let iiii = document.createElement('a')
-            iiii.href = 'https://addsoupbase.github.io/twehg'
-            iiii.innerHTML = 'World\'s even harderest game'
-            holder.appendChild(iiii)
-
-            {
-                let texx2 = document.createElement('p')
-                texx2.className = 'subtext'
-                texx2.style.fontSize = '15px'
-                texx2.innerHTML = 'A remake of the old flash game "The world\'s hardest game". It\'s not done and only has a few levels but its kewl i guess!! (music by i_likebugs2)'
-                holder.appendChild(texx2)
-            }
-            {
-                let runningOutOfNameIdeas = document.createElement('a')
-                runningOutOfNameIdeas.href = 'https://addsoupbase.github.io/sort'
-                runningOutOfNameIdeas.innerHTML = 'Sorting thing'
-                holder.appendChild(runningOutOfNameIdeas)
-
-            }
-            {
-                let texx2 = document.createElement('p')
-                texx2.className = 'subtext'
-                texx2.style.fontSize = '15px'
-                texx2.innerHTML = 'its one of those sorting algorithm things'
-                holder.appendChild(texx2)
-            }
-
-        }
-            break;
-    }
-    $('#preset').children().hide().fadeIn()
-
+function load(page) {
+  /*  $.when($('.parent').fadeOut()).then(()=>{
+        $('#' + page).fadeIn()
+    })*/
+   $('.parent').hide()
+   $('#'+page).fadeIn()
 }
 function darkenPage() {
     canvas.style.backgroundColor = `rgb(${14 - (window.scrollY / 80)}, ${132 - (window.scrollY / 80)}, ${228 - (window.scrollY / 80)})`
@@ -357,36 +121,41 @@ function Update() {
     }
     Shape.toKill = []
     Shape._.forEach((o) => {
-        if (!(frame % 8)) {
-            o.frame++
-        }
         o.draw()
-
     })
-
-    if (!(frame % 80)) {
-        new Shape('bubble')
-
-
-
-
-
-
-
+    for (let o of Object.keys(everyFrame)) {
+        if (!(frame % +o)) {
+            everyFrame[o]()
+        }
     }
-    if (!(frame % 60) || frame < 50) {
+
+    if (frame < 50) {
+        everyFrame[60]()
+    }
+
+    ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+}
+const everyFrame = {
+    60: () => {
         let f = new Shape('bubble2')
         f.y = canvas.height
         f.x = Math.floor(Math.random() * canvas.width)
         f.size = Math.choose(6, 8);
-    }
-    if (!(frame % 100)) {
+    },
+    80: () => {
+        new Shape('bubble')
+    },
+    100: () => {
         let nn = new Shape('poke')
         nn.img = Math.choose(...Sprite.all);
         nn.velocity *= 0.7
+    },
+    8: () => {
+        Shape._.forEach(o => {
+            o.frame++
+        })
     }
-    ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
 function cycleColour() {
     if (rgb.r === 255 && rgb.g !== 255 && rgb.b === 0) {
@@ -487,6 +256,7 @@ class Shape {
         this.invuln = false
         this.unpoppable = false
         this.popped = false
+        this.offset = Math.random() * 4000
         let n = Avatar.current.next()
         if (!n.done) {
             this.img = n.value
@@ -576,12 +346,12 @@ class Shape {
                 ctx.translate(this.x, this.y)
 
                 if (this.img) {
-                 //   ctx.imageSmoothingEnabled=false
+                    //   ctx.imageSmoothingEnabled=false
                     ctx.save()
-                    ctx.arc(0, 0, this.img.width/3, 0, Math.PI * 2)
+                    ctx.arc(0, 0, this.img.width / 3, 0, Math.PI * 2)
                     ctx.clip()
-                
-                    ctx.drawImage(this.img, (-this.img.width / 2)/1.5, (-this.img.height / 2)/1.5, this.img.width/1.5, this.img.height/1.5)
+
+                    ctx.drawImage(this.img, (-this.img.width / 2) / 1.5, (-this.img.height / 2) / 1.5, this.img.width / 1.5, this.img.height / 1.5)
                     ctx.restore()
                 }
                 ctx.beginPath()
@@ -596,7 +366,7 @@ class Shape {
                 ctx.strokeStyle = 'lightblue'
                 ctx.stroke()
                 ctx.restore()
-                this.t === 1 ? this.velocityY = Math.sin(frame / 60) * 2 : this.velocityY = Math.cos(frame / 60) * 2
+                this.t === 1 ? this.velocityY = Math.sin((frame + this.offset) / 60) * 2 : this.velocityY = Math.cos((frame + this.offset) / 60) * 2
 
             }
                 break;
@@ -620,7 +390,7 @@ class Shape {
                 ctx.strokeStyle = 'lightblue'
                 ctx.stroke()
                 ctx.restore()
-                this.t === 1 ? this.velocity = Math.sin(frame * 6) * 2 : this.velocity = Math.cos(frame * 6) * 2
+                this.t === 1 ? this.velocity = Math.sin((frame + this.offset) * 6) * 2 : this.velocity = Math.cos((frame + this.offset) * 6) * 2
 
             }
                 break;
@@ -635,7 +405,7 @@ class Shape {
             }
                 break
             case 'image': {
-         //       ctx.imageSmoothingEnabled=false
+                //       ctx.imageSmoothingEnabled=false
                 ctx.globalAlpha = 1
                 this.velocityY = -1;
                 this.velocity = 0
@@ -651,14 +421,14 @@ class Shape {
                 /// ctx.strokeStyle='grey'
                 ///  ctx.lineWidth=1
                 //  ctx.strokeText(this.img.text,0,this.size*1.5)
-                ctx.arc(0, 0, this.img.height/2, 0, Math.PI * 2)
+                ctx.arc(0, 0, this.img.height / 2, 0, Math.PI * 2)
 
                 ctx.clip()
                 ctx.drawImage(this.img,
-                     (-this.img.width / 2), 
-                     (-this.img.height / 2), 
-                     this.img.width, 
-                     this.img.height)
+                    (-this.img.width / 2),
+                    (-this.img.height / 2),
+                    this.img.width,
+                    this.img.height)
 
 
                 ctx.restore()
@@ -866,3 +636,4 @@ function toRad(ang) {
         }
     }
 })*/
+
