@@ -17,8 +17,25 @@ const canvas = $('#canvas')[0],
 let mood = $('#mood')[0];
 (async ()=>{
     let text = await (await fetch('mood.txt')).text()
-    console.log(text)
-
+    mood.innerHTML = text.toLowerCase()
+    if (text.match(/sad|depressed|lonely|empty|worthless|weak/)) {
+        mood.style.color = 'blue'
+    }
+    if (text.match(/hyper|happy|excited|euphoric|silly/)) {
+        mood.style.color = 'yellow'
+    }
+    if (text.match(/calm|content|normal/)) {
+        mood.style.color = 'cyan'
+    }
+    if (text.match(/angry|mad|frustrated/)) {
+        mood.style.color = 'red'
+    }
+    if (text.match(/sick|injured/)) {
+        mood.style.color = 'red'
+    }
+    if (text === 'bored') {
+        mood.style.color = 'grey'
+    }
     })()
  let frame = 0,
     playing = false;
