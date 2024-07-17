@@ -14,8 +14,13 @@ const canvas = $('#canvas')[0],
 //night.preload = true
 //day.loop = night.loop = true;
 //day.volume = night.volume = 0.5;
+let mood = $('#mood')[0];
+(async ()=>{
+    let text = await (await fetch('mood.txt')).text()
+    console.log(text)
 
-let frame = 0,
+    })()
+ let frame = 0,
     playing = false;
 function hide() {
     $('#main').fadeOut()
