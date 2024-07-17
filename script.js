@@ -15,28 +15,7 @@ const canvas = $('#canvas')[0],
 //day.loop = night.loop = true;
 //day.volume = night.volume = 0.5;
 let mood = $('#mood')[0];
-(async ()=>{
-    let text = await (await fetch('mood.txt')).text()
-    mood.innerHTML = text.toLowerCase()
-    if (text.match(/sad|depressed|lonely|empty|worthless|weak/)) {
-        mood.style.color = 'blue'
-    }
-    if (text.match(/hyper|happy|excited|euphoric|silly/)) {
-        mood.style.color = 'yellow'
-    }
-    if (text.match(/calm|content|normal/)) {
-        mood.style.color = 'cyan'
-    }
-    if (text.match(/angry|mad|frustrated/)) {
-        mood.style.color = 'red'
-    }
-    if (text.match(/sick|injured/)) {
-        mood.style.color = 'red'
-    }
-    if (text === 'bored') {
-        mood.style.color = 'grey'
-    }
-    })()
+
  let frame = 0,
     playing = false;
 function hide() {
@@ -659,3 +638,25 @@ function toRad(ang) {
     }
 })*/
 
+(async ()=>{
+    let text = await (await fetch('mood.txt')).text()
+    mood.innerHTML = text.toLowerCase()
+    if (text.match(/sad|depressed|lonely|empty|worthless|weak/)) {
+        mood.style.color = 'blue'
+    }
+    if (text.match(/hyper|happy|excited|euphoric|silly/)) {
+        mood.style.color = 'yellow'
+    }
+    if (text.match(/calm|content|normal/)) {
+        mood.style.color = 'cyan'
+    }
+    if (text.match(/angry|mad|frustrated/)) {
+        mood.style.color = 'red'
+    }
+    if (text.match(/sick|injured/)) {
+        mood.style.color = 'red'
+    }
+    if (text === 'bored') {
+        mood.style.color = 'grey'
+    }
+    })()
