@@ -639,7 +639,7 @@ function toRad(ang) {
 })*/
 
 (async ()=>{
-    let text = await (await fetch('mood.txt')).text()
+    let text = await (await fetch('mood.txt?t='+Date.now())).text()
     mood.innerHTML = text.toLowerCase()
     if (text.match(/sad|depressed|lonely|empty|worthless|weak/)) {
         mood.style.color = 'blue'
