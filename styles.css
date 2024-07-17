@@ -28,7 +28,7 @@
     background-color: #0d6fa4;
     /* or add it to the track */
 }
-#about,#gallery,#projects,#guide,#music {
+#about,#gallery,#projects,#music {
     display: none;
 }
 ::-webkit-scrollbar-thumb {
