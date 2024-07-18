@@ -55,7 +55,7 @@ ctx.imageSmoothingQuality = 'high';
     if (text.match(/calm|content|normal/)) {
         mood.style.color = 'cyan'
     }
-    if (text.match(/angry|mad|frustrated/)) {
+    if (text.match(/angry|mad|frustrated|annoyed/)) {
         mood.style.color = 'red'
     }
     if (text.match(/sick|injured/)) {
