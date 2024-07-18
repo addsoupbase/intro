@@ -1,6 +1,5 @@
 import { ctx } from './script.js'
 import { Avatar, Sprite } from "./photos.js";
-import { AvatarStack } from './names.js'
 const username = $('#user')[0]
 let frame = 0,otherTime,
     rgb = {

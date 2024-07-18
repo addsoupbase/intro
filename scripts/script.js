@@ -1,5 +1,6 @@
 
 import { Update, Shape } from './drawing.js'
+import {AvatarStack} from './names.js'
 console.log("%cHII", "color:teal;font-size:30px");
 let radius = 1;
 const canvas = $('#canvas')[0],
@@ -58,7 +59,7 @@ ctx.imageSmoothingQuality = 'high';
         mood.style.color = 'red'
     }
     if (text.match(/sick|injured/)) {
-        mood.style.color = 'red'
+        mood.style.color = 'green'
     }
     if (text === 'bored') {
         mood.style.color = 'grey'
