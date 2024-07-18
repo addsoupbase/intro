@@ -1,6 +1,6 @@
 'use strict';
 let Text = ''
-class Avatar extends Image {
+export class Avatar extends Image {
     static all = []
     static cycle = function* () {
         yield* Avatar.all
@@ -19,17 +19,19 @@ class Avatar extends Image {
             //   console.log(this.src + ' Loaded :)') 
         }
         this.onerror = () => {
-            console.error(this.src)
             if (this.src.includes('.png')) {
+                console.warn(this.text + ' did not use .png format, so i used .jpg instead')
+
                 this.src = this.src.replace('.png', '.jpg')
             }
         }
     }
 }
-class Sprite extends Image {
+export class Sprite extends Image {
     static all = []
     constructor(src, frames) {
         super()
+        this.name = src
         this.src = 'img/' + src + '.png';
         this.frames = frames;
         this.preload = true;
@@ -39,7 +41,7 @@ class Sprite extends Image {
         }
     }
 }
-let AvatarStack = [
+export let AvatarStack = [
     ["aya", "Aya"],
     ["ghostie"],
     ["cunder"],
@@ -98,36 +100,22 @@ for (let [file, name] of AvatarStack) {
     }
 }
 
-let gorebyss = new Sprite('gorebyssspritesheet', 9),
-    phione = new Sprite('phionesprite', 10),
-    sharpedo = new Sprite('sharpedospritesheet', 8),
-    kyogre = new Sprite('kyogrespritesheet', 10),
-    manaphy = new Sprite('manaphysprite', 8),
-    seadra = new Sprite('seadrasprite', 5),
-    huntail = new Sprite('huntailsprite', 4),
-    carvanha = new Sprite('carvanhasprite', 4),
-    lanturn = new Sprite('lanturnsprite', 4),
-    // lanturnShiny = new Sprite('lanturnshinysprite', 4),
-    corsola = new Sprite('corsolasprite', 4),
-    wailord = new Sprite('wailordsprite', 12)
 
 for (let i = 0; i < 4; i++) {
-    Sprite.all.push(gorebyss,phione,sharpedo,manaphy,gorebyss,manaphy,seadra,huntail,carvanha,carvanha,lanturn,corsola)
+    Sprite.all.push(
+        new Sprite('gorebyssspritesheet', 9),
+    new Sprite('phionesprite', 10),
+    new Sprite('sharpedospritesheet', 8),
+    new Sprite('manaphysprite', 8),
+    new Sprite('gorebyssspritesheet', 9),
+    new Sprite('manaphysprite', 8),
+    new Sprite('seadrasprite', 5),
+    new Sprite('huntailsprite', 4),
+    new Sprite('carvanhasprite', 4),
+    new Sprite('carvanhasprite', 4),
+    new Sprite('lanturnsprite', 4),
+    new Sprite('corsolasprite', 4))
 }
+new Sprite('kyogresprite', 4)
 
-
-
-let MIS = new Image()
-MIS.src = "img/misdreavus-export.png"
-let art1 = new Image()
-art1.src = 'img/lurantis.png'
-let art2 = new Image()
-art2.src = 'img/nosepass.png'
-let art3 = new Image()
-art3.src = 'img/suicune.png'
-let art4 = new Image()
-art4.src = 'img/bleh.png'
-let art5 = new Image()
-art5.src = 'img/wynaut4_cropped.png'
-let art6 = new Image()
-art6.src = 'img/sprigatto.png'
+console.log(new Sprite('wailordsprite', 12).name)

@@ -1,4 +1,4 @@
-'use strict';
+import { AvatarStack, Avatar, Sprite } from "./photos.js";
 console.log("%cHII", "color:teal;font-size:30px");
 let radius = 1;
 const canvas = $('#canvas')[0],
@@ -18,7 +18,7 @@ let mood = $('#mood')[0];
 
  let frame = 0,
     playing = false;
-function hide() {
+ window.hide = () => {
     $('#main').fadeOut()
 }
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
@@ -31,7 +31,7 @@ $('.contain').css({ left: '-300px', opacity: 0 })
 
 
 
-function load(page) {
+window.load = (page) =>{
   /*  $.when($('.parent').fadeOut()).then(()=>{
         $('#' + page).fadeIn()
     })*/
@@ -41,7 +41,7 @@ function load(page) {
 function darkenPage() {
     canvas.style.backgroundColor = `rgb(${14 - (window.scrollY / 80)}, ${132 - (window.scrollY / 80)}, ${228 - (window.scrollY / 80)})`
 }
-let sources = [art1, art2, art3, art4, art5, art6], cu = 0;
+let cu = 0;
 let addLetters = function* () {
     yield username.innerHTML = 'a'
     for (let i of 'ddsoupbase') {
@@ -468,26 +468,26 @@ class Shape {
                     x: 0,
                     y: 0,
                 }
-                switch (this.img) {
-                    case gorebyss:
+                switch (this.img.name) {
+                    case 'gorebyssspritesheet':
                         crop.x = 70
                         crop.y = 75
                         break
-                    case phione:
+                    case 'phionesprite':
                         crop.y = 50;
                         crop.x = 40
                         break
-                    case sharpedo:
+                    case 'sharpedospritesheet':
                         crop.x = 50;
                         crop.y = 75;
                         this.velocity = 2 * Math.sign(this.velocity)
 
                         break;
-                    case kyogre:
+                    case 'kyogresprite':
                         crop.x = 130;
                         crop.y = 130;
                         break
-                    case wailord:
+                    case 'wailordsprite':
                         crop.x = 285;
                         crop.y = 320
                         this.velocity = 0.5 * Math.sign(this.velocity)
@@ -500,23 +500,23 @@ class Shape {
                                shine.opacity = 1
                                shine.y = this.y + Math.random() * 30 * Math.choose(1, -1)
                            }*/
-                    case lanturn:
+                    case 'lanturnsprite':
                         crop.x = 50;
                         crop.y = 70
                         break;
-                    case corsola:
+                    case 'corsolasprite':
                         crop.x = 25;
                         crop.y = 30;
                         break;
-                    case seadra:
+                    case 'seadrasprite':
                         crop.x = 55
                         crop.y = 60
                         break;
-                    case carvanha:
+                    case 'carvanhasprite':
                         crop.x = 40;
                         crop.y = 50
                         break;
-                    case manaphy:
+                    case 'manaphysprite':
                         crop.x = 65;
                         crop.y = 60
                         break;
