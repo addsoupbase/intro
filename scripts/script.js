@@ -151,7 +151,7 @@ ctx.imageSmoothingQuality = 'high';
         color = '#454545'
         regex = regexes.bored
     }
-    miniCanvas.text = text.slice(0, text.length - 1)
+    miniCanvas.text = text
     miniCanvas.update(color,regex)
 })()
 
