@@ -1,7 +1,7 @@
-import { ctx } from './script.js'
+import { ctx, miniCanvas } from './script.js'
 import { Avatar, Sprite } from "./photos.js";
 const username = $('#user')[0]
-let frame = 0,otherTime,
+export let frame = 0; let otherTime,
     rgb = {
         r: 255,
         g: 0,
@@ -87,6 +87,8 @@ export const Update = () => {
 
     ctx.fillStyle = 'rgb(14, 132, 228,0.25)'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
+    miniCanvas.update()
+
 }
 
 export const Shape = class {
