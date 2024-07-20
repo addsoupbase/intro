@@ -37,6 +37,7 @@ export let frame = 0; let otherTime,
 
     }()
 export const Update = () => {
+  
     frame = requestAnimationFrame(Update)
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth

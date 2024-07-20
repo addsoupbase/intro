@@ -18,8 +18,9 @@ export const miniCanvas = {
     text: null,
     color: null,
     all: [],
-    update: function a(color,regex) {
-       // miniCanvas.text ??= text.slice(0, text.length - 1)
+    update: function a(color, regex) {
+       // setTimeout(a, 10)
+        // miniCanvas.text ??= text.slice(0, text.length - 1)
         miniCanvas.regex ??= regex
         miniCanvas.color ??= color
         let w = miniCanvas.width,
@@ -32,42 +33,42 @@ export const miniCanvas = {
         c.textAlign = 'center'
         c.lineWidth = 2
         let moods = new Map()
-        moods.set(regexes.sad, ()=> {
-            c.font = `bold ${40+Math.abs(Math.cos(frame/200)*30)}px lexend`
-            c.rotate(Math.cos(frame/20)/10)
-        
+        moods.set(regexes.sad, () => {
+            c.font = `bold ${40 + Math.abs(Math.cos(frame / 200) * 30)}px lexend`
+            c.rotate(Math.cos(frame / 20) / 10)
+
         })
-        moods.set(regexes.angry, ()=> {
-            c.translate(Math.cos(frame/2)*5,0)
-        
+        moods.set(regexes.angry, () => {
+            c.translate(Math.cos(frame / 2) * 5, 0)
+
         })
-        moods.set(regexes.calm, ()=> {
-            c.translate(Math.cos(frame/10)*10,Math.sin(frame/10)*10)
-        
+        moods.set(regexes.calm, () => {
+            c.translate(Math.cos(frame / 10) * 10, Math.sin(frame / 10) * 10)
+
         })
-        moods.set(regexes.happy, ()=> {
-            c.translate(0,-Math.abs(Math.sin(frame/10))*20)
-        
+        moods.set(regexes.happy, () => {
+            c.translate(0, -Math.abs(Math.sin(frame / 10)) * 20)
+
         })
-        moods.set(regexes.bored, ()=> {
-            c.translate(0,-Math.abs(Math.sin(frame/1000))*20)
-        
+        moods.set(regexes.bored, () => {
+            c.translate(0, -Math.abs(Math.sin(frame / 1000)) * 20)
+
         })
-        moods.set(regexes.sick, ()=> {
-            c.translate(Math.cos(frame/40)*50,0)
-            c.rotate(frame/300)
-        
+        moods.set(regexes.sick, () => {
+            c.translate(Math.cos(frame / 40) * 50, 0)
+            c.rotate(frame / 300)
+
         })
         // Set the fill style and draw a rectangle
-     //   c.fillStyle = miniCanvas.color;
+        //   c.fillStyle = miniCanvas.color;
         c.save()
-        c.translate(w/2,h/2)
-       // c.shadowColor = miniCanvas.color
-      //  c.shadowBlur = 15
+        c.translate(w / 2, h / 2)
+        // c.shadowColor = miniCanvas.color
+        //  c.shadowBlur = 15
         moods.get(miniCanvas.regex)?.()
-        c.strokeText(miniCanvas.text?.[0]?.toUpperCase() + miniCanvas.text?.slice(1),0,0)
-        c.fillText(miniCanvas.text?.[0]?.toUpperCase() + miniCanvas.text?.slice(1),0,0)
-       c.restore()
+        c.strokeText(miniCanvas.text?.[0]?.toUpperCase() + miniCanvas.text?.slice(1), 0, 0)
+        c.fillText(miniCanvas.text?.[0]?.toUpperCase() + miniCanvas.text?.slice(1), 0, 0)
+        c.restore()
 
         /*            c.beginPath()
                     c.moveTo(w/2,0)
@@ -97,20 +98,32 @@ export const ctx = canvas.getContext('2d');
 //day.loop = night.loop = true;
 //day.volume = night.volume = 0.5;
 let mood = $('#mood')[0];
-let playing = false;
+let running = true;
 window.hide = () => {
     $('#main').fadeOut()
 }
+export let toLoad = false
 Math.choose = (...a) => a[Math.floor(Math.random() * a.length)];
 const preset = $('#preset')[0]
 $('.contain').css({ left: '-300px', opacity: 0 })
     .animate({ left: 0, opacity: 1 }, 'slow')
-window.load = (page) => {
+window.load = async (page) => {
+    if (!running) {
+        return
+    }
     /*  $.when($('.parent').fadeOut()).then(()=>{
           $('#' + page).fadeIn()
       })*/
-    $('.parent').hide()
-    $('#' + page).fadeIn()
+    cancelAnimationFrame(frame)
+
+
+
+    running=false
+    await $('.parent').hide().promise()
+     $('#' + page).fadeIn()
+    requestAnimationFrame(Update)
+    running = true
+
 }
 function darkenPage() {
     canvas.style.backgroundColor = `rgb(${14 - (window.scrollY / 80)}, ${132 - (window.scrollY / 80)}, ${228 - (window.scrollY / 80)})`
@@ -152,7 +165,7 @@ ctx.imageSmoothingQuality = 'high';
         regex = regexes.bored
     }
     miniCanvas.text = text
-    miniCanvas.update(color,regex)
+    miniCanvas.update(color, regex)
 })()
 
 $(document).on({
