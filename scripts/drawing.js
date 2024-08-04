@@ -377,7 +377,7 @@ export const Shape = class {
                         this.velocity = 2 * Math.sign(this.velocity)
 
                         break;
-                    case 'kyogresprite':
+                    case 'kyogrespritesheet':
                         crop.x = 130;
                         crop.y = 130;
                         break
