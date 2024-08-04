@@ -58,5 +58,5 @@ for (let i = 0; i < 4; i++) {
     new Sprite('lanturnsprite', 4),
     new Sprite('corsolasprite', 4))
 }
-new Sprite('kyogresprite', 4)
+new Sprite('kyogrespritesheet', 4)
 new Sprite('wailordsprite', 12)
