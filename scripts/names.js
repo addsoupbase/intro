@@ -51,13 +51,15 @@ export let AvatarStack = [
     ["lemmy"],
     ['mira']
 ]
-let newest = AvatarStack[AvatarStack.length - 1][0]
+let newest = AvatarStack[AvatarStack.length - 1][0],
+ alias = AvatarStack[AvatarStack.length - 1][1] ?? newest; 
+ console.log(alias)
 $('#new').attr('src', 'img/avatars/' + newest + '.png')
-$('#newestName')[0].innerHTML = newest[0].toUpperCase() + newest.slice(1)
+$('#newestName')[0].innerHTML = alias[0].toUpperCase() + alias.slice(1)
 let x = new Image()
 x.src = 'img/avatars/' + newest + '.png'
 x.onerror = function () {
-    $('#new').attr('src', this.src.replace('png', 'jpeg'))
+    $('#new').attr('src', this.src.replace('png', 'jpg'))
 }
 for (let [file, name] of AvatarStack) {
     if (name) {
