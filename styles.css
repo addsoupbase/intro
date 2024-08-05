@@ -32,7 +32,8 @@
 #about,
 #gallery,
 #projects,
-#music {
+#music,
+#newest {
     display: none;
 }
 

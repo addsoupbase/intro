@@ -1,6 +1,6 @@
- import { Avatar } from "./photos.js"
- 
- export let AvatarStack = [
+import { Avatar } from "./photos.js"
+
+export let AvatarStack = [
     ["aya", "Aya"],
     ["ghostie"],
     ["cunder"],
@@ -44,12 +44,21 @@
     ['zoozi'],
     ['glente'],
     ['morrfie'],
-    ['random',"random_userlol"],
+    ['random', "random_userlol"],
     ["gib"],
     ["rurikuu"],
-    ['Regs','Regs_s'],
-    ["lemmy"]
+    ['Regs', 'Regs_s'],
+    ["lemmy"],
+    ['mira']
 ]
+let newest = AvatarStack[AvatarStack.length - 1][0]
+$('#new').attr('src', 'img/avatars/' + newest + '.png')
+$('#newestName')[0].innerHTML = newest[0].toUpperCase() + newest.slice(1)
+let x = new Image()
+x.src = 'img/avatars/' + newest + '.png'
+x.onerror = function () {
+    $('#new').attr('src', this.src.replace('png', 'jpeg'))
+}
 for (let [file, name] of AvatarStack) {
     if (name) {
         new Avatar(file, name)
