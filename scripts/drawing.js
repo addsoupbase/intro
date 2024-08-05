@@ -359,8 +359,8 @@ export const Shape = class {
 
                 this.velocityY = 0
                 let crop = {
-                    x: 0,
-                    y: 0,
+                    x: 75,
+                    y: 75,
                 }
                 crop = Sprite.crops[this.img.name]?.call?.(this) || crop
                 {
@@ -369,7 +369,7 @@ export const Shape = class {
                     }
 
 
-                    ctx.drawImage(this.img, (this.img.width / this.img.frames) * this.frame, 0, this.img.width / this.img.frames, this.img.height, 0, 0, crop.x || 100, crop.y || 100)
+                    ctx.drawImage(this.img, (this.img.width / this.img.frames) * this.frame, 0, this.img.width / this.img.frames, this.img.height, 0, 0, crop.x, crop.y)
                     ctx.restore()
                 }
                 break;

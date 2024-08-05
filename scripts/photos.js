@@ -93,34 +93,30 @@ export class Sprite extends Image {
             }
         }
     }
-    constructor(src, frames) {
+    constructor(src, frames, count) {
         super()
         this.name = src
+        this.count = count || 1
         this.src = 'img/' + src + '.png';
         this.frames = frames;
         this.preload = true;
         this.onload = () => {
-            Sprite.all.push(this);
+          for (let i = 0; i < this.count; i++)  Sprite.all.push(this);
             //     console.log(this.src + ' Loaded :)')   
         }
     }
 }
 
 
-for (let i = 0; i < 4; i++) {
-    Sprite.all.push(
-        new Sprite('gorebyssspritesheet', 9),
-        new Sprite('phionesprite', 10),
-        new Sprite('sharpedospritesheet', 8),
-        new Sprite('manaphysprite', 8),
-        new Sprite('gorebyssspritesheet', 9),
-        new Sprite('manaphysprite', 8),
-        new Sprite('seadrasprite', 5),
-        new Sprite('huntailsprite', 4),
-        new Sprite('carvanhasprite', 4),
-        new Sprite('carvanhasprite', 4),
-        new Sprite('lanturnsprite', 4),
-        new Sprite('corsolasprite', 4))
-}
-new Sprite('kyogrespritesheet', 4)
-new Sprite('wailordsprite', 12)
+
+        new Sprite('gorebyssspritesheet', 9,3),
+        new Sprite('phionesprite', 10,1),
+        new Sprite('sharpedospritesheet', 8,3),
+        new Sprite('manaphysprite', 8,1),
+        new Sprite('seadrasprite', 5,5),
+        new Sprite('huntailsprite', 4,3),
+        new Sprite('carvanhasprite', 4,7),
+        new Sprite('lanturnsprite', 4,5),
+        new Sprite('corsolasprite', 4,5)
+        new Sprite('kyogrespritesheet', 10,1)
+        new Sprite('wailordsprite', 12,1)
