@@ -362,63 +362,7 @@ export const Shape = class {
                     x: 0,
                     y: 0,
                 }
-                switch (this.img.name) {
-                    case 'gorebyssspritesheet':
-                        crop.x = 70
-                        crop.y = 75
-                        break
-                    case 'phionesprite':
-                        crop.y = 50;
-                        crop.x = 40
-                        break
-                    case 'sharpedospritesheet':
-                        crop.x = 50;
-                        crop.y = 75;
-                        this.velocity = 2 * Math.sign(this.velocity)
-
-                        break;
-                    case 'kyogrespritesheet':
-                        crop.x = 130;
-                        crop.y = 130;
-                        break
-                    case 'wailordsprite':
-                        crop.x = 285;
-                        crop.y = 320
-                        this.velocity = 0.5 * Math.sign(this.velocity)
-                        break;
-                    /*   case lanturnShiny:
-                           if (!(frame % 10)) {
-                               let shine = new Shape('sparkle')
-                               shine.size = 4 + Math.random() * 2
-                               shine.x = this.x + Math.random() * 30 * Math.choose(1, -1)
-                               shine.opacity = 1
-                               shine.y = this.y + Math.random() * 30 * Math.choose(1, -1)
-                           }*/
-                    case 'lanturnsprite':
-                        crop.x = 50;
-                        crop.y = 70
-                        break;
-                    case 'corsolasprite':
-                        crop.x = 25;
-                        crop.y = 30;
-                        break;
-                    case 'seadrasprite':
-                        crop.x = 55
-                        crop.y = 60
-                        break;
-                    case 'carvanhasprite':
-                        crop.x = 40;
-                        crop.y = 50
-                        break;
-                    case 'manaphysprite':
-                        crop.x = 65;
-                        crop.y = 60
-                        break;
-                    default:
-                        crop.y = 75;
-                        crop.x = 75;
-                        break
-                }
+                crop = Sprite.crops[this.img.name]?.call?.(this) || crop
                 {
                     if (this.frame > this.img?.frames - 1) {
                         this.frame = 0
