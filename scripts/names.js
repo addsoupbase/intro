@@ -52,8 +52,7 @@ export let AvatarStack = [
     ['mira']
 ]
 let newest = AvatarStack[AvatarStack.length - 1][0],
- alias = AvatarStack[AvatarStack.length - 1][1] ?? newest; 
- console.log(alias)
+    alias = AvatarStack[AvatarStack.length - 1][1] ?? newest;
 $('#new').attr('src', 'img/avatars/' + newest + '.png')
 $('#newestName')[0].innerHTML = alias[0].toUpperCase() + alias.slice(1)
 let x = new Image()
