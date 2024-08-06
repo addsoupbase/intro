@@ -90,8 +90,7 @@ iframe {
 }
 
 #miniCanvas {
-
-    margin: 20px;
+    width: 100%;
 }
 
 #canvas {
