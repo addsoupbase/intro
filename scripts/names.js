@@ -49,7 +49,8 @@ export let AvatarStack = [
     ["rurikuu"],
     ['Regs', 'Regs_s'],
     ["lemmy"],
-    ['mira']
+    ['mira'],
+    ["na22","N/A22"]
 ]
 let newest = AvatarStack[AvatarStack.length - 1][0],
     alias = AvatarStack[AvatarStack.length - 1][1] ?? newest;
