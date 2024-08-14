@@ -52,7 +52,6 @@ export let AvatarStack = [
     ['mira'],
     ["na22","N/A22"],
     ["frannie4u"],
-    ["grace"],
     ["schpun"]
 ]
 let newest = AvatarStack[AvatarStack.length - 1][0],
