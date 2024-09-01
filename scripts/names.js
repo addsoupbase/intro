@@ -49,7 +49,7 @@ export let AvatarStack = [
     ["rurikuu"],
     ['Regs', 'Regs_s'],
     ["lemmy"],
-    ['mira'],
+    ['mila'],
     ["na22","N/A22"],
     ["frannie4u"],
     ["schpun"]
