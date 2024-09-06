@@ -52,7 +52,8 @@ export let AvatarStack = [
     ['mila'],
     ["na22","N/A22"],
     ["frannie4u"],
-    ["schpun"]
+    ["schpun"],
+    ['son_yukio']
 ]
 let newest = AvatarStack[AvatarStack.length - 1][0],
     alias = AvatarStack[AvatarStack.length - 1][1] ?? newest;
@@ -61,7 +62,7 @@ $('#newestName')[0].innerHTML = alias[0].toUpperCase() + alias.slice(1)
 let x = new Image()
 x.src = 'img/avatars/' + newest + '.png'
 x.onerror = function () {
-    $('#new').attr('src', this.src.replace('png', 'jpg'))
+    $('#new').attr('src', this.src.replace('png', 'jpeg'))
 }
 for (let [file, name] of AvatarStack) {
     if (name) {
