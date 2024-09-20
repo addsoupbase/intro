@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size</title>
+</head>
+<body>
+    <textarea id="abc" placeholder="input"></textarea>
+    <textarea id="xyz" placeholder="output"></textarea>
+    <button onclick="navigator.clipboard.writeText(xyz.value)">COPY</button>
+    <p>If its an emoji, type the emoji by itself in chat first, and then send the output</p>
+    <script>
+        setInterval(setSizes,100)
+    function setSizes() {
+        let z = abc.value
+      xyz.value = `# ${z}\n## ${z}\n${z} _ _\n-# ${z}`
+    }
+
+    </script>
+    
+</body>
+</html>
