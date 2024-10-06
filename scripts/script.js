@@ -3,7 +3,18 @@ import { Update, Shape, frame } from './drawing.js'
 import { AvatarStack } from './names.js'
 console.log("%cHII", "color:teal;font-size:30px");
 let radius = 1;
+window.c = ()=>{
+    setTimeout(()=>{
+        if (sessionStorage.getItem('prompt') !== 'true' && 
+            confirm('You are currently viewing the old version of this site, would you like to go to the newer one?')) {
+            location.href = 'https://addsoupbase.github.io/';
+        } else {
+            sessionStorage.setItem('prompt', 'true');
+        }
 
+    },100)
+  
+}
 const canvas = $('#canvas')[0];
 let regexes = {
     sad: /sad|depressed|lonely|empty|worthless|weak/,
